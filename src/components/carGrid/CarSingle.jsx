@@ -1,6 +1,12 @@
 import React from "react";
-
+import { useParams } from "react-router-dom";
+import { useCars } from "../../context/CarContext";
 export const CarSingle = () => {
+  const { id } = useParams(); // Get the 'id' parameter from the URL
+  const { cars } = useCars();
+  console.log(cars);
+  const car = cars.find((p) => p.id === parseInt(id));
+  console.log(car);
   return (
     <div className="car-item-single bg py-120">
       <div className="container">
@@ -11,7 +17,7 @@ export const CarSingle = () => {
                 <div className="car-single-widget">
                   <div className="car-single-top">
                     <span className="car-status status-1">Brand New</span>
-                    <h3 className="car-single-title">Mercedes Benz Car</h3>
+                    <h3 className="car-single-title">{car.Make}</h3>
                     <ul className="car-single-meta">
                       <li>
                         <i className="far fa-clock" /> Listed On: Sat, Jan 25,
@@ -38,7 +44,7 @@ export const CarSingle = () => {
                             }}
                           >
                             <li
-                              data-thumb="assets/img/car/single-4.jpg"
+                              //   data-thumb={car.image}
                               className="clone"
                               style={{
                                 width: "735.958px",
@@ -46,9 +52,9 @@ export const CarSingle = () => {
                                 display: "block",
                               }}
                             >
-                              <img src="assets/img/car/single-4.jpg" alt="#" />
+                              <img src={car.image} alt="#" />
                             </li>
-                            <li
+                            {/* <li
                               data-thumb="assets/img/car/single-1.jpg"
                               className="flex-active-slide"
                               style={{
@@ -102,7 +108,7 @@ export const CarSingle = () => {
                               }}
                             >
                               <img src="assets/img/car/single-1.jpg" alt="#" />
-                            </li>
+                            </li> */}
                           </ul>
                         </div>
                         <ol className="flex-control-nav flex-control-thumbs">

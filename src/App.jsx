@@ -18,9 +18,9 @@ function App() {
       <Navbar />
       <Hero />
       <Form />
-      <AboutSection />
       <CarGrid />
-      <CarSingle />
+      <AboutSection />
+      {/* <CarSingle /> */}
       {/* <Hero />
       <AboutSection />
       <Form />
