@@ -6,6 +6,7 @@ import { Form } from "./components/formFilter/Form";
 import { Hero } from "./components/header/Hero";
 import { AboutSection } from "./components/static/AboutSection";
 import { CarGrid } from "./components/carGrid/CarGrid";
+import { CarSingle } from "./components/carGrid/CarSingle";
 // import { Hero } from "./components/header/Hero";
 // import { AboutSection } from "./components/static/AboutSection";
 // import { Form } from "./components/formFilter/Form";
@@ -19,6 +20,7 @@ function App() {
       <Form />
       <AboutSection />
       <CarGrid />
+      <CarSingle />
       {/* <Hero />
       <AboutSection />
       <Form />
