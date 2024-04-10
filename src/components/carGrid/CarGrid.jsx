@@ -2,375 +2,537 @@ import React from "react";
 import im from "../../assets/images/dena.webp";
 export const CarGrid = () => {
   return (
-    <section className="cars1 section-padding">
+    <div className="car-area bg py-120">
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src={im} alt="" />{" "}
+          <div className="col-lg-6 mx-auto">
+            <div className="site-heading text-center">
+              <span className="site-title-tagline">
+                <i className="flaticon-drive" /> New Arrivals
+              </span>
+              <h2 className="site-title">
+                Let's Check Latest <span>Cars</span>
+              </h2>
+              <div className="heading-divider" />
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".25s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.25s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <span className="car-status status-1">Used</span>
+                <img src="assets/img/car/01.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Lamborghini Urus</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 2 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">Mercedes Benz Car</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$750</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$45,620</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/8.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".50s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.5s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <img src="assets/img/car/02.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Aston Martin DBX</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 2 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">Yellow Ferrari 458</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$500</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$90,250</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/9.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".75s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.75s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <img src="assets/img/car/03.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Bugatti Mistral W16</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 2 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-age" /> Age 25
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">Black Audi Q7</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$800</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$44,350</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/11.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay="1s"
+              style={{
+                visibility: "visible",
+                animationDelay: "1s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <span className="car-status status-2">New</span>
+                <img src="assets/img/car/04.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Bentley Bentayga</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 2 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">BMW Sports Car</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$600</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$78,760</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/12.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".25s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.25s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <span className="car-status status-1">Used</span>
+                <img src="assets/img/car/05.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Rolls Royce Cullinan</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 4 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">White Tesla Car</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$900</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$64,230</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/13.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".50s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.5s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <span className="car-status status-2">New</span>
+                <img src="assets/img/car/06.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Bentley Continental</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 2 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">White Nissan Car</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$500</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$34,540</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/14.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay=".75s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.75s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <img src="assets/img/car/07.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">Audi RS7 Sportback</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 2 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">Mercedes Benz Suv</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$450</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$75,820</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12 mb-60">
-            <div className="item">
-              <div className="img">
-                {" "}
-                <img src="img/slider/15.jpg" alt="" />{" "}
+          <div className="col-md-6 col-lg-4 col-xl-3">
+            <div
+              className="car-item wow fadeInUp"
+              data-wow-delay="1s"
+              style={{
+                visibility: "visible",
+                animationDelay: "1s",
+                animationName: "fadeInUp",
+              }}
+            >
+              <div className="car-img">
+                <img src="assets/img/car/08.jpg" alt="" />
+                <div className="car-btns">
+                  <a href="#">
+                    <i className="far fa-heart" />
+                  </a>
+                  <a href="#">
+                    <i className="far fa-arrows-repeat" />
+                  </a>
+                </div>
               </div>
-              <div className="con active">
-                <div className="row">
-                  <div className="col-md-7">
-                    <div className="title">
-                      <a href="#">AUDI Q8</a>
-                    </div>
-                    <div className="details">
-                      {" "}
-                      <span>
-                        <i className="omfi-door" /> 4 Seats
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-transmission" /> Auto
-                      </span>{" "}
-                      <span>
-                        <i className="omfi-luggage" /> 3 Bags
-                      </span>
-                    </div>
+              <div className="car-content">
+                <div className="car-top">
+                  <h4>
+                    <a href="#">Red Hyundai Car</a>
+                  </h4>
+                  <div className="car-rate">
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <i className="fas fa-star" />
+                    <span>5.0 (58.5k Review)</span>
                   </div>
-                  <div className="col-md-5">
-                    <div className="book">
-                      <div>
-                        <a href="car-details.html" className="btn">
-                          <span>Details</span>
-                        </a>
-                      </div>
-                      <div>
-                        <span className="price">$450</span>
-                        <span>/day</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <ul className="car-list">
+                  <li>
+                    <i className="far fa-steering-wheel" />
+                    Automatic
+                  </li>
+                  <li>
+                    <i className="far fa-road" />
+                    10.15km / 1-litre
+                  </li>
+                  <li>
+                    <i className="far fa-car" />
+                    Model: 2023
+                  </li>
+                  <li>
+                    <i className="far fa-gas-pump" />
+                    Hybrid
+                  </li>
+                </ul>
+                <div className="car-footer">
+                  <span className="car-price">$25,620</span>
+                  <a href="#" className="theme-btn">
+                    <span className="far fa-eye" />
+                    Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        {/* Pagination */}
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <ul className="pagination-wrap">
-              <li>
-                <a href="blog2.html#">
-                  <i className="ti-angle-left" />
-                </a>
-              </li>
-              <li>
-                <a href="blog2.html#">1</a>
-              </li>
-              <li>
-                <a href="blog2.html#" className="active">
-                  2
-                </a>
-              </li>
-              <li>
-                <a href="blog2.html#">3</a>
-              </li>
-              <li>
-                <a href="blog2.html#">
-                  <i className="ti-angle-right" />
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="text-center mt-4">
+          <a href="#" className="theme-btn">
+            Load More <i className="far fa-arrow-rotate-right" />{" "}
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

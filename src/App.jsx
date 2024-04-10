@@ -5,6 +5,7 @@ import "./assets/css/style.css";
 import { Form } from "./components/formFilter/Form";
 import { Hero } from "./components/header/Hero";
 import { AboutSection } from "./components/static/AboutSection";
+import { CarGrid } from "./components/carGrid/CarGrid";
 // import { Hero } from "./components/header/Hero";
 // import { AboutSection } from "./components/static/AboutSection";
 // import { Form } from "./components/formFilter/Form";
@@ -17,6 +18,7 @@ function App() {
       <Hero />
       <Form />
       <AboutSection />
+      <CarGrid />
       {/* <Hero />
       <AboutSection />
       <Form />
