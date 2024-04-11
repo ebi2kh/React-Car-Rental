@@ -4,25 +4,30 @@ import carData from "../data.js";
 const CarContext = createContext();
 
 export const CarProvider = ({ children }) => {
+  const [cars, setCars] = useState(carData);
   const [filteredCars, setFilteredCars] = useState(carData);
 
-  const filterCarsByLocation = (location) => {
-    const filtered = carData.filter((car) => car.Location === location);
-    setFilteredCars(filtered);
-  };
+  const filterCars = (make, location) => {
+    let newFilteredCars = cars;
 
-  const filterCarsByMake = (make) => {
-    const filtered = carData.filter((car) => car.Make === make);
-    setFilteredCars(filtered);
-  };
+    if (make) {
+      newFilteredCars = newFilteredCars.filter((car) => car.Make === make);
+    }
 
+    if (location) {
+      newFilteredCars = newFilteredCars.filter(
+        (car) => car.Location === location
+      );
+    }
+
+    setFilteredCars(newFilteredCars);
+  };
   return (
     <CarContext.Provider
       value={{
-        cars: carData,
+        cars,
         filteredCars,
-        filterCarsByLocation,
-        filterCarsByMake,
+        filterCars,
       }}
     >
       {children}

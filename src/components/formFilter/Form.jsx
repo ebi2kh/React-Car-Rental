@@ -5,9 +5,10 @@ import { useCars } from "../../context/CarContext";
 import Dropdown from "../utils/Dropdown";
 export const Form = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedMake, setSelectedMake] = useState("");
   const [selectedLocationText, setSelectedLocationText] =
     useState("انتخاب کنید");
-  const { cars, filterCarsByLocation, filteredCars } = useCars();
+  const { cars, filterCars, filteredCars } = useCars();
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [isLocation2Open, setIsLocation2Open] = useState(false);
   const [isMakeOpen, setIsMakeOpen] = useState(false);
@@ -15,9 +16,9 @@ export const Form = () => {
   console.log(selectedLocation);
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission behavior
-    filterCarsByLocation(selectedLocation);
-  };
 
+    filterCars(selectedMake, selectedLocation);
+  };
   console.log(filteredCars);
   return (
     <div className="find-car">
@@ -90,6 +91,9 @@ export const Form = () => {
                             key={index}
                             data-value={index + 2}
                             className="option"
+                            onClick={() => {
+                              setSelectedMake(location);
+                            }}
                           >
                             {location}
                           </li>
