@@ -1,21 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Dropdown = ({ defaultOption, options }) => {
+const Dropdown = ({ defaultOption, options, onSelect }) => {
+  const [selectedValue, setSelectedValue] = useState(defaultOption);
   const [isOpen, setIsOpen] = useState(false);
 
+
+  const handleSelect = (value) => {
+    setSelectedValue(value);
+
+    onSelect(value);
+  };
   return (
     <div
       className={`nice-select select ${isOpen ? "open" : ""}`}
       tabIndex={0}
       onClick={() => setIsOpen(!isOpen)}
     >
-      <span className="current">{defaultOption}</span>
+      <span className="current">{selectedValue}</span>
       <ul className="list">
         <li data-value={1} className="option selected">
           {defaultOption}
         </li>
         {options.map((option, index) => (
-          <li key={index} data-value={index + 2} className="option">
+          <li
+            key={index}
+            data-value={index + 2}
+            className="option"
+            onClick={() => handleSelect(option)}
+          >
             {option}
           </li>
         ))}
@@ -23,5 +35,4 @@ const Dropdown = ({ defaultOption, options }) => {
     </div>
   );
 };
-
 export default Dropdown;

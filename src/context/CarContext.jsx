@@ -11,9 +11,19 @@ export const CarProvider = ({ children }) => {
     setFilteredCars(filtered);
   };
 
+  const filterCarsByMake = (make) => {
+    const filtered = carData.filter((car) => car.Make === make);
+    setFilteredCars(filtered);
+  };
+
   return (
     <CarContext.Provider
-      value={{ cars: carData, filteredCars, filterCarsByLocation }}
+      value={{
+        cars: carData,
+        filteredCars,
+        filterCarsByLocation,
+        filterCarsByMake,
+      }}
     >
       {children}
     </CarContext.Provider>
