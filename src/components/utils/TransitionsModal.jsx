@@ -26,7 +26,10 @@ export default function TransitionsModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button className="theme-btn" onClick={handleOpen}>
+        <span className="far fa-eye" />
+        Open modal
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -49,13 +52,6 @@ export default function TransitionsModal() {
               overflowY: "auto",
             }}
           >
-            {/* <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography> */}
-
             <FormModal />
           </Box>
         </Fade>

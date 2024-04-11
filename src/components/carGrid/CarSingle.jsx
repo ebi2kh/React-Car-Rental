@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useCars } from "../../context/CarContext";
 import { RelatedCar } from "./RelatedCar";
+import TransitionsModal from "../utils/TransitionsModal";
 export const CarSingle = () => {
   const { id } = useParams(); // Get the 'id' parameter from the URL
   const { cars } = useCars();
@@ -213,7 +214,7 @@ export const CarSingle = () => {
                         </ul>
                       </div>
                     </div>
-
+                    <TransitionsModal />
                     <h4 className="mb-4">لوکیشن</h4>
                     <div className="car-single-map">
                       <div className="contact-map">
@@ -227,7 +228,6 @@ export const CarSingle = () => {
                     </div>
                   </div>
                 </div>
-                <div className="car-single-widget"></div>
               </div>
             </div>
             <div className="col-lg-4">
