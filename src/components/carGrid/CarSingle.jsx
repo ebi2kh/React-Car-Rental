@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useCars } from "../../context/CarContext";
+import { RelatedCar } from "./RelatedCar";
 export const CarSingle = () => {
   const { id } = useParams(); // Get the 'id' parameter from the URL
   const { cars } = useCars();
@@ -20,137 +21,39 @@ export const CarSingle = () => {
                     <h3 className="car-single-title">{car.Make}</h3>
                     <ul className="car-single-meta">
                       <li>
-                        <i className="far fa-clock" /> Listed On: Sat, Jan 25,
-                        2023
+                        <i className="far fa-clock" /> تاریخ: Sat, Jan 25, 2023
                       </li>
                       <li>
-                        <i className="far fa-eye" /> Views: 850
+                        <i className="far fa-eye" /> بازدید: 850
                       </li>
                     </ul>
                   </div>
                   <div className="car-single-slider">
                     <div className="item-gallery">
                       <div className="flexslider-thumbnails">
-                        <div
-                          className="flex-viewport"
-                          style={{ overflow: "hidden", position: "relative" }}
-                        >
-                          <ul
-                            className="slides"
-                            style={{
-                              width: "1200%",
-                              transitionDuration: "0s",
-                              transform: "translate3d(-735.958px, 0px, 0px)",
-                            }}
-                          >
-                            <li
-                              //   data-thumb={car.image}
-                              className="clone"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                            >
-                              <img src={car.image} alt="#" />
-                            </li>
-                            {/* <li
-                              data-thumb="assets/img/car/single-1.jpg"
-                              className="flex-active-slide"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                            >
-                              <img src="assets/img/car/single-1.jpg" alt="#" />
-                            </li>
-                            <li
-                              data-thumb="assets/img/car/single-2.jpg"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                              className=""
-                            >
-                              <img src="assets/img/car/single-2.jpg" alt="#" />
-                            </li>
-                            <li
-                              data-thumb="assets/img/car/single-3.jpg"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                              className=""
-                            >
-                              <img src="assets/img/car/single-3.jpg" alt="#" />
-                            </li>
-                            <li
-                              data-thumb="assets/img/car/single-4.jpg"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                              className=""
-                            >
-                              <img src="assets/img/car/single-4.jpg" alt="#" />
-                            </li>
-                            <li
-                              data-thumb="assets/img/car/single-1.jpg"
-                              className="clone"
-                              style={{
-                                width: "735.958px",
-                                float: "left",
-                                display: "block",
-                              }}
-                            >
-                              <img src="assets/img/car/single-1.jpg" alt="#" />
-                            </li> */}
-                          </ul>
-                        </div>
                         <ol className="flex-control-nav flex-control-thumbs">
                           <li>
-                            <img
-                              src="assets/img/car/single-1.jpg"
-                              className="flex-active"
-                            />
-                          </li>
-                          <li>
-                            <img
-                              src="assets/img/car/single-2.jpg"
-                              className=""
-                            />
-                          </li>
-                          <li>
-                            <img
-                              src="assets/img/car/single-3.jpg"
-                              className=""
-                            />
-                          </li>
-                          <li>
-                            <img
-                              src="assets/img/car/single-4.jpg"
-                              className=""
-                            />
+                            <img src={car.image} className="flex-active" />
                           </li>
                         </ol>
-                        <ul className="flex-direction-nav">
-                          <li>
-                            <a className="flex-prev" href="#" />
-                          </li>
-                          <li>
-                            <a className="flex-next" href="#" />
-                          </li>
-                        </ul>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className="car-single-widget text-center">
+                  <h4 className="car-single-price">تومان/ساعت {car.Rental}</h4>
+                  <ul className="car-single-meta">
+                    <li>
+                      <i className="fa-regular fa-gauge-high" /> 50k حداکثر
+                      کیلومتر درروز
+                    </li>
+                    <li>
+                      <i className="far fa-location-dot" /> {car.Location}
+                    </li>
+                  </ul>
+                </div>
                 <div className="car-single-widget">
-                  <h4 className="mb-4">Key Information</h4>
+                  <h4 className="mb-4">اطلاعات اصلی</h4>
                   <div className="car-key-info">
                     <div className="row">
                       <div className="col-lg-3 col-md-4 col-6">
@@ -159,8 +62,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Body Type</span>
-                            <h6>Coupe</h6>
+                            <span>نوع</span>
+                            <h6>اقتصادی</h6>
                           </div>
                         </div>
                       </div>
@@ -170,8 +73,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Condition</span>
-                            <h6>Brand New</h6>
+                            <span>وضعیت</span>
+                            <h6>مدل جدید</h6>
                           </div>
                         </div>
                       </div>
@@ -181,8 +84,8 @@ export const CarSingle = () => {
                             <i className="flaticon-speedometer" />
                           </div>
                           <div className="car-key-content">
-                            <span>Mileage</span>
-                            <h6>50,000 (Mi)</h6>
+                            <span>مارمرد</span>
+                            <h6>50,000 (KM)</h6>
                           </div>
                         </div>
                       </div>
@@ -192,8 +95,8 @@ export const CarSingle = () => {
                             <i className="flaticon-settings" />
                           </div>
                           <div className="car-key-content">
-                            <span>Transmission</span>
-                            <h6>Autometic</h6>
+                            <span>دنده</span>
+                            <h6>{car.Transmission}</h6>
                           </div>
                         </div>
                       </div>
@@ -203,8 +106,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Year</span>
-                            <h6>2023</h6>
+                            <span>سال</span>
+                            <h6>{car.Year}</h6>
                           </div>
                         </div>
                       </div>
@@ -214,8 +117,8 @@ export const CarSingle = () => {
                             <i className="flaticon-gas-station" />
                           </div>
                           <div className="car-key-content">
-                            <span>Fuel Type</span>
-                            <h6>Diesel</h6>
+                            <span>نوع سوخت</span>
+                            <h6>{car.Fuel}</h6>
                           </div>
                         </div>
                       </div>
@@ -225,8 +128,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Color</span>
-                            <h6>Red</h6>
+                            <span>رنگ</span>
+                            <h6>{car.Color}</h6>
                           </div>
                         </div>
                       </div>
@@ -236,8 +139,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Doors</span>
-                            <h6>2 Doors</h6>
+                            <span>تعداد درها</span>
+                            <h6>4</h6>
                           </div>
                         </div>
                       </div>
@@ -247,30 +150,8 @@ export const CarSingle = () => {
                             <i className="flaticon-drive" />
                           </div>
                           <div className="car-key-content">
-                            <span>Cylinders</span>
-                            <h6>05</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-md-4 col-6">
-                        <div className="car-key-item">
-                          <div className="car-key-icon">
-                            <i className="flaticon-drive" />
-                          </div>
-                          <div className="car-key-content">
-                            <span>Engine Size</span>
-                            <h6>2,000 (cc)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-lg-3 col-md-4 col-6">
-                        <div className="car-key-item">
-                          <div className="car-key-icon">
-                            <i className="flaticon-drive" />
-                          </div>
-                          <div className="car-key-content">
-                            <span>VIN</span>
-                            <h6>532GAFDSUY</h6>
+                            <span>تعداد صندلی</span>
+                            <h6>{car.Seat}</h6>
                           </div>
                         </div>
                       </div>
@@ -279,7 +160,7 @@ export const CarSingle = () => {
                 </div>
                 <div className="car-single-widget">
                   <div className="car-single-overview">
-                    <h4 className="mb-3">Description</h4>
+                    <h4 className="mb-3">توصیف</h4>
                     <div className="mb-4">
                       <p>
                         There are many variations of passages orem psum
@@ -301,23 +182,19 @@ export const CarSingle = () => {
                         making it look like readable English.
                       </p>
                     </div>
-                    <h4 className="mb-3">Car Features</h4>
+                    <h4 className="mb-3">ویژگی های دیگر خودرو</h4>
                     <div className="row mb-3">
                       <div className="col-lg-4">
                         <ul className="car-single-list">
                           <li>
-                            <i className="far fa-check-circle" /> Multi-zone A/C
+                            <i className="far fa-check-circle" /> کولر
+                          </li>
+
+                          <li>
+                            <i className="far fa-check-circle" /> سیستم مسیریابی
                           </li>
                           <li>
-                            <i className="far fa-check-circle" /> Heated front
-                            seats
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Navigation
-                            system
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Leather seats
+                            <i className="far fa-check-circle" /> صندلی چرم
                           </li>
                         </ul>
                       </div>
@@ -328,57 +205,16 @@ export const CarSingle = () => {
                             system
                           </li>
                           <li>
-                            <i className="far fa-check-circle" /> Bluetooth
+                            <i className="far fa-check-circle" /> بلوتوث
                           </li>
                           <li>
-                            <i className="far fa-check-circle" /> Andriod Auto
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Intermittent
-                            wipers
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="col-lg-4">
-                        <ul className="car-single-list">
-                          <li>
-                            <i className="far fa-check-circle" /> Memory seat
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Adaptive
-                            Cruise Control
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Cooled Seats
-                          </li>
-                          <li>
-                            <i className="far fa-check-circle" /> Keyles Start
+                            <i className="far fa-check-circle" /> اندروید
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <h4 className="mb-4">Vehicle History</h4>
-                    <div className="mb-4">
-                      <ul className="car-single-list">
-                        <li>
-                          <i className="far fa-check-circle" /> It is a long
-                          established fact that a reader will be distracted{" "}
-                        </li>
-                        <li>
-                          <i className="far fa-check-circle" /> Sed perspic unde
-                          omnis iste natus sit voluptatem accusantium
-                        </li>
-                        <li>
-                          <i className="far fa-check-circle" /> Explain to you
-                          how all this mistaken idea of denouncing pleasure
-                        </li>
-                        <li>
-                          <i className="far fa-check-circle" /> Praising pain
-                          was born will give account of the system
-                        </li>
-                      </ul>
-                    </div>
-                    <h4 className="mb-4">Location</h4>
+
+                    <h4 className="mb-4">لوکیشن</h4>
                     <div className="car-single-map">
                       <div className="contact-map">
                         <iframe
@@ -395,302 +231,10 @@ export const CarSingle = () => {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="car-single-widget">
-                <h4 className="car-single-price">$50,560</h4>
-                <ul className="car-single-meta">
-                  <li>
-                    <i className="fa-regular fa-gauge-high" /> 50k Miles
-                  </li>
-                  <li>
-                    <i className="far fa-location-dot" /> 25/B Milford, New York
-                  </li>
-                </ul>
-              </div>
-              <div className="car-single-widget">
-                <div className="car-single-author">
-                  <img src="assets/img/car/author.jpg" alt="" />
-                  <div className="car-single-author-content">
-                    <h5>Marid Anderson</h5>
-                    <span>Customer Advisor</span>
-                    <div className="car-single-author-social">
-                      <a href="#">
-                        <i className="fab fa-facebook" />
-                      </a>
-                      <a href="#">
-                        <i className="fab fa-instagram" />
-                      </a>
-                      <a href="#">
-                        <i className="fab fa-twitter" />
-                      </a>
-                      <a href="#">
-                        <i className="fab fa-linkedin" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="car-single-widget">
-                <h5 className="mb-3">Contact Details</h5>
-                <div className="car-single-form">
-                  <form action="#">
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Name"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter Email"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <textarea
-                        className="form-control"
-                        rows={3}
-                        placeholder="Write Message"
-                        defaultValue={""}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <button type="submit" className="theme-btn">
-                        Send Now
-                        <i className="fas fa-arrow-right-long" />
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="car-single-related mt-5">
-            <h3 className="mb-30">Related Listing</h3>
-            <div className="row">
-              <div className="col-md-6 col-lg-4 col-xl-3">
-                <div className="car-item">
-                  <div className="car-img">
-                    <span className="car-status status-1">Used</span>
-                    <img src="assets/img/car/01.jpg" alt="" />
-                    <div className="car-btns">
-                      <a href="#">
-                        <i className="far fa-heart" />
-                      </a>
-                      <a href="#">
-                        <i className="far fa-arrows-repeat" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="car-content">
-                    <div className="car-top">
-                      <h4>
-                        <a href="#">Mercedes Benz Car</a>
-                      </h4>
-                      <div className="car-rate">
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <span>5.0 (58.5k Review)</span>
-                      </div>
-                    </div>
-                    <ul className="car-list">
-                      <li>
-                        <i className="far fa-steering-wheel" />
-                        Automatic
-                      </li>
-                      <li>
-                        <i className="far fa-road" />
-                        10.15km / 1-litre
-                      </li>
-                      <li>
-                        <i className="far fa-car" />
-                        Model: 2023
-                      </li>
-                      <li>
-                        <i className="far fa-gas-pump" />
-                        Hybrid
-                      </li>
-                    </ul>
-                    <div className="car-footer">
-                      <span className="car-price">$45,620</span>
-                      <a href="#" className="theme-btn">
-                        <span className="far fa-eye" />
-                        Details
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-lg-4 col-xl-3">
-                <div className="car-item">
-                  <div className="car-img">
-                    <img src="assets/img/car/02.jpg" alt="" />
-                    <div className="car-btns">
-                      <a href="#">
-                        <i className="far fa-heart" />
-                      </a>
-                      <a href="#">
-                        <i className="far fa-arrows-repeat" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="car-content">
-                    <div className="car-top">
-                      <h4>
-                        <a href="#">Yellow Ferrari 458</a>
-                      </h4>
-                      <div className="car-rate">
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <span>5.0 (58.5k Review)</span>
-                      </div>
-                    </div>
-                    <ul className="car-list">
-                      <li>
-                        <i className="far fa-steering-wheel" />
-                        Automatic
-                      </li>
-                      <li>
-                        <i className="far fa-road" />
-                        10.15km / 1-litre
-                      </li>
-                      <li>
-                        <i className="far fa-car" />
-                        Model: 2023
-                      </li>
-                      <li>
-                        <i className="far fa-gas-pump" />
-                        Hybrid
-                      </li>
-                    </ul>
-                    <div className="car-footer">
-                      <span className="car-price">$90,250</span>
-                      <a href="#" className="theme-btn">
-                        <span className="far fa-eye" />
-                        Details
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-lg-4 col-xl-3">
-                <div className="car-item">
-                  <div className="car-img">
-                    <img src="assets/img/car/03.jpg" alt="" />
-                    <div className="car-btns">
-                      <a href="#">
-                        <i className="far fa-heart" />
-                      </a>
-                      <a href="#">
-                        <i className="far fa-arrows-repeat" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="car-content">
-                    <div className="car-top">
-                      <h4>
-                        <a href="#">Black Audi Q7</a>
-                      </h4>
-                      <div className="car-rate">
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <span>5.0 (58.5k Review)</span>
-                      </div>
-                    </div>
-                    <ul className="car-list">
-                      <li>
-                        <i className="far fa-steering-wheel" />
-                        Automatic
-                      </li>
-                      <li>
-                        <i className="far fa-road" />
-                        10.15km / 1-litre
-                      </li>
-                      <li>
-                        <i className="far fa-car" />
-                        Model: 2023
-                      </li>
-                      <li>
-                        <i className="far fa-gas-pump" />
-                        Hybrid
-                      </li>
-                    </ul>
-                    <div className="car-footer">
-                      <span className="car-price">$44,350</span>
-                      <a href="#" className="theme-btn">
-                        <span className="far fa-eye" />
-                        Details
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-lg-4 col-xl-3">
-                <div className="car-item">
-                  <div className="car-img">
-                    <span className="car-status status-2">New</span>
-                    <img src="assets/img/car/04.jpg" alt="" />
-                    <div className="car-btns">
-                      <a href="#">
-                        <i className="far fa-heart" />
-                      </a>
-                      <a href="#">
-                        <i className="far fa-arrows-repeat" />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="car-content">
-                    <div className="car-top">
-                      <h4>
-                        <a href="#">BMW Sports Car</a>
-                      </h4>
-                      <div className="car-rate">
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <i className="fas fa-star" />
-                        <span>5.0 (58.5k Review)</span>
-                      </div>
-                    </div>
-                    <ul className="car-list">
-                      <li>
-                        <i className="far fa-steering-wheel" />
-                        Automatic
-                      </li>
-                      <li>
-                        <i className="far fa-road" />
-                        10.15km / 1-litre
-                      </li>
-                      <li>
-                        <i className="far fa-car" />
-                        Model: 2023
-                      </li>
-                      <li>
-                        <i className="far fa-gas-pump" />
-                        Hybrid
-                      </li>
-                    </ul>
-                    <div className="car-footer">
-                      <span className="car-price">$78,760</span>
-                      <a href="#" className="theme-btn">
-                        <span className="far fa-eye" />
-                        Details
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* <div className="car-single-related mt-5"> */}
+              <h3 className="mb-30">Related Listing</h3>
+              <RelatedCar />
+              {/* </div> */}
             </div>
           </div>
         </div>
