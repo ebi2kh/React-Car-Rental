@@ -21,6 +21,7 @@ import Choose from "./components/static/Choose";
 import Download from "./components/static/Download";
 import Testimonials from "./components/static/Testimonials";
 import About from "./pages/About.jsx";
+import HomePages from "./pages/HomePages.jsx";
 function App() {
   return (
     <>
@@ -37,7 +38,7 @@ function App() {
       <BrowserRouter>
         <CarProvider>
           <Routes>
-            {/* <Route path="/" element={<App />} /> */}
+            <Route path="/" element={<HomePages />} />
             <Route path="about" element={<About />} />
             <Route path="/post/:id" element={<CarSingle />} />
           </Routes>

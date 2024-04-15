@@ -1,5 +1,7 @@
 import React from "react";
 import { AboutSection } from "../components/static/AboutSection";
+import Counter from "../components/static/Counter";
+import Testimonials from "../components/static/Testimonials";
 
 const About = () => {
   return (
@@ -20,6 +22,8 @@ const About = () => {
       </div>
 
       <AboutSection />
+      <Counter />
+      <Testimonials />
     </>
   );
 };
