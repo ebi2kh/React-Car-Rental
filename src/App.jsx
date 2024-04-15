@@ -22,6 +22,8 @@ import Download from "./components/static/Download";
 import Testimonials from "./components/static/Testimonials";
 import About from "./pages/About.jsx";
 import HomePages from "./pages/HomePages.jsx";
+import Contact from "./pages/Contact.jsx";
+import NotFound from "./pages/NotFound.jsx";
 function App() {
   return (
     <>
@@ -40,7 +42,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePages />} />
             <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="/post/:id" element={<CarSingle />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </CarProvider>
       </BrowserRouter>
