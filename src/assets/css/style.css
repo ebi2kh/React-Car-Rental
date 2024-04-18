@@ -1,7 +1,52 @@
-@import "./css2";
+/* @import "./css2"; */
+
+@font-face {
+  font-family: iransans-ulight;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/IRANSansWeb_UltraLight.eot");
+  src: url("../fonts/IRANSansWeb_UltraLight-1.eot") format("embedded-opentype"),
+    url("../fonts/IRANSansWeb_UltraLight.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_UltraLight.woff") format("woff"),
+    url("../fonts/IRANSansWeb_UltraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iransans-light;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/IRANSansWeb_Light.eot");
+  src: url("../fonts/IRANSansWeb_Light-1.eot") format("embedded-opentype"),
+    url("../fonts/IRANSansWeb_Light.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Light.woff") format("woff"),
+    url("../fonts/IRANSansWeb_Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iransans-medium;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/IRANSansWeb_Medium.eot");
+  src: url("../fonts/IRANSansWeb_Medium-1.eot") format("embedded-opentype"),
+    url("../fonts/IRANSansWeb_Medium.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Medium.woff") format("woff"),
+    url("../fonts/IRANSansWeb_Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: iransans-bold;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/IRANSansWeb_Bold.eot");
+  src: url("../fonts/IRANSansWeb_Bold-1.eot") format("embedded-opentype"),
+    url("../fonts/IRANSansWeb_Bold.woff2") format("woff2"),
+    url("../fonts/IRANSansWeb_Bold.woff") format("woff"),
+    url("../fonts/IRANSansWeb_Bold.ttf") format("truetype");
+}
+
 :root {
-  --body-font: "Roboto", sans-serif;
-  --heading-font: "Inter", sans-serif;
+  --body-font: "Roboto", iransans-light;
+  --heading-font: "Inter", iransans-light;
   --theme-color: #ef1d26;
   --theme-bg-light: #f9f9f9;
   --body-text-color: #757f95;
@@ -34,6 +79,7 @@
 }
 html,
 body {
+  direction: rtl;
   height: auto;
   width: 100%;
   margin: 0;
@@ -795,7 +841,7 @@ label {
     top: 140%;
   }
   .navbar #main_nav {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   .nav-right {
     display: flex;

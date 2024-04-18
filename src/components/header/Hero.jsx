@@ -16,7 +16,7 @@ export const Hero = () => {
                   data-delay=".25s"
                   style={{ animationDelay: "0.25s" }}
                 >
-                  Welcome To Motex!
+                  خوش آمدید به ریکت خودرو
                 </h6>
                 <h1
                   className="hero-title animated fadeInRight"
@@ -43,11 +43,11 @@ export const Hero = () => {
                   style={{ animationDelay: "1s" }}
                 >
                   <a href="#" className="theme-btn">
-                    About More
+                    درباره ما
                     <i className="fas fa-arrow-right-long" />
                   </a>
                   <a href="#" className="theme-btn theme-btn2">
-                    Learn More
+                    بیشتر بخوانید
                     <i className="fas fa-arrow-right-long" />
                   </a>
                 </div>
