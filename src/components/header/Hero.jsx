@@ -24,7 +24,7 @@ export const Hero = () => {
                   data-delay=".50s"
                   style={{ animationDelay: "0.5s" }}
                 >
-                  Best Way To Find Your <span>Dream</span> Car
+                  بهترین راه برای پیدا کردن <span>ماشین</span> رویایی شما
                 </h1>
                 <p
                   data-animation="fadeInLeft"
@@ -32,9 +32,8 @@ export const Hero = () => {
                   className="animated fadeInLeft"
                   style={{ animationDelay: "0.75s" }}
                 >
-                  There are many variations of passages orem psum available but
-                  the majority have suffered alteration in some form by injected
-                  humour.
+                  از میان مجموعه گسترده ای از خودروهای کیفیت بالا انتخاب کنید.
+                  ما در اینجا هستیم تا سفر شما را آسان و خاطره انگیز کنیم.
                 </p>
                 <div
                   className="hero-btn animated fadeInUp"
@@ -55,7 +54,7 @@ export const Hero = () => {
             </div>
             <div className="col-md-12 col-lg-6">
               <div className="hero-right">
-                <div className="hero-img">
+                <div className="hero-img" style={{ opacity: 0.5 }}>
                   <img
                     src={im2}
                     alt=""

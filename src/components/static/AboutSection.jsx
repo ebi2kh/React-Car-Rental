@@ -1,5 +1,5 @@
 import React from "react";
-
+import im from "../../assets/img/about/01.png";
 export const AboutSection = () => {
   return (
     <div className="about-area py-120">
@@ -16,14 +16,14 @@ export const AboutSection = () => {
               }}
             >
               <div className="about-img">
-                <img src="assets/img/about/01.png" alt="" />
+                <img src={im} alt="" />
               </div>
               <div className="about-experience">
                 <div className="about-experience-icon">
                   <i className="flaticon-car" />
                 </div>
                 <b>
-                  30 Years Of <br /> Quality Service
+                  30 سال از <br /> خدمات با کیفیت
                 </b>
               </div>
             </div>
@@ -40,26 +40,33 @@ export const AboutSection = () => {
             >
               <div className="site-heading mb-3">
                 <span className="site-title-tagline justify-content-start">
-                  <i className="flaticon-drive" /> About Us
+                  <i className="flaticon-drive" /> درباره ما
                 </span>
                 <h2 className="site-title">
-                  World Largest <span>Car Dealer</span> Marketplace.
+                  بزرگترین سایت <span> کرایه خودرو</span>
                 </h2>
               </div>
               <p className="about-text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour.
+                از میان مجموعه گسترده ای از خودروهای کیفیت بالا انتخاب کنید. ما
+                در اینجا هستیم تا سفر شما را آسان و خاطره انگیز کنیم.
               </p>
               <div className="about-list-wrapper">
                 <ul className="about-list list-unstyled">
-                  <li>At vero eos et accusamus et iusto odio.</li>
-                  <li>Established fact that a reader will be distracted.</li>
-                  <li>Sed ut perspiciatis unde omnis iste natus sit.</li>
+                  <li>
+                    ما به طور کامل به حقوق و احترام به مشتریان خود پایبند هستیم.
+                  </li>
+                  <li>
+                    یک حقیقت مستحکم شده است که خواننده توسط محتوای قابل خواندن
+                    از صفحه منحرف می شود.
+                  </li>
+                  <li>
+                    ما تحت تأثیر هیچ چیزی نیستیم، ما فقط به بهترین خدمات متعهد
+                    هستیم.
+                  </li>
                 </ul>
               </div>
               <a href="about.html" className="theme-btn mt-4">
-                Discover More
+                بیشتر بخوانید
                 <i className="fas fa-arrow-right-long" />
               </a>
             </div>

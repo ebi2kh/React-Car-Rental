@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo/logo.svg";
 export const Navbar = () => {
   return (
@@ -6,30 +7,31 @@ export const Navbar = () => {
       <div className="main-navigation">
         <nav className="navbar navbar-expand-lg">
           <div className="container position-relative">
-            <a className="navbar-brand" href="index.html">
-              {/* <img src={logo} alt="logo" /> */}
+            <a className="nav-link" href="index.html">
+              <img src={logo} alt="logo" style={{ fontSize: "20px" }} />
             </a>
             <div className="collapse navbar-collapse" id="main_nav">
-              <ul className="navbar-nav">
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle active"
+              <ul className="navbar-nav" style={{ margin: "0 70px" }}>
+                <li className="nav-item dropdown" style={{ margin: "0 10px" }}>
+                  <Link
+                    to={"/"}
+                    className="nav-link active"
                     href="#"
                     data-bs-toggle="dropdown"
                   >
                     خانه
-                  </a>
+                  </Link>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="about.html">
+                <li className="nav-item" style={{ margin: "0 10px" }}>
+                  <Link className="nav-link" to={"about"}>
                     درباره
-                  </a>
+                  </Link>
                 </li>
 
-                <li className="nav-item">
-                  <a className="nav-link" href="contact.html">
+                <li className="nav-item" style={{ margin: "0 10px" }}>
+                  <Link className="nav-link" to={"contact"}>
                     تماس با ما
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="nav-right">
@@ -70,6 +72,30 @@ export const Navbar = () => {
                   <i className="far fa-bars" />
                 </span>
               </button>
+            </div>
+            <div className="col-md-6 align-self-center">
+              <ul className="footer-social">
+                <li style={{ fontSize: "30px" }}>
+                  <a href="#">
+                    <i className="fab fa-facebook-f" />
+                  </a>
+                </li>
+                <li style={{ fontSize: "30px" }}>
+                  <a href="#">
+                    <i className="fab fa-twitter" />
+                  </a>
+                </li>
+                <li style={{ fontSize: "30px" }}>
+                  <a href="#">
+                    <i className="fab fa-linkedin-in" />
+                  </a>
+                </li>
+                <li style={{ fontSize: "30px" }}>
+                  <a href="#">
+                    <i className="fab fa-youtube" />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>

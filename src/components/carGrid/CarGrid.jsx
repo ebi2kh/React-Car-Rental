@@ -1,9 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import { useCars } from "../../context/CarContext";
 import { Route, Link } from "react-router-dom";
-
+import TransitionsModal from "../utils/TransitionsModal";
 export const CarGrid = () => {
   const { cars, filteredCars } = useCars();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const carsToDisplay = filteredCars.length > 0 ? filteredCars : cars;
   return (
     <div className="car-area bg py-120">
@@ -12,10 +22,10 @@ export const CarGrid = () => {
           <div className="col-lg-6 mx-auto">
             <div className="site-heading text-center">
               <span className="site-title-tagline">
-                <i className="flaticon-drive" /> New Arrivals
+                <i className="flaticon-drive" /> لیست خودروها
               </span>
               <h2 className="site-title">
-                Let's Check Latest <span>Cars</span>
+                آخرین <span>خودروها</span>
               </h2>
               <div className="heading-divider" />
             </div>
@@ -24,7 +34,7 @@ export const CarGrid = () => {
         <div className="row">
           {carsToDisplay.map((car) => {
             return (
-              <div key={car.id} className="col-md-6 col-lg-4 col-xl-3">
+              <div key={car.id} className="col-md-6 col-lg-6 col-xl-4">
                 <div
                   className="car-item wow fadeInUp"
                   data-wow-delay=".25s"
@@ -35,7 +45,7 @@ export const CarGrid = () => {
                   }}
                 >
                   <div className="car-img">
-                    <span className="car-status status-1">Used</span>
+                    <span className="car-status status-1">جدید</span>
                     <img src={car.image} alt="" />
                     <div className="car-btns">
                       <a href="#">
@@ -57,45 +67,56 @@ export const CarGrid = () => {
                         <i className="fas fa-star" />
                         <i className="fas fa-star" />
                         <i className="fas fa-star" />
-                        <span>5.0 (58.5k Review)</span>
+                        <span>5.0 (58.5k براساس)</span>
                       </div>
                     </div>
                     <ul className="car-list">
                       <li>
                         <i className="far fa-steering-wheel" />
-                        Automatic
+                        {car.Transmission}
                       </li>
                       <li>
                         <i className="far fa-road" />
-                        10.15km / 1-litre
+                        10.15km / یک لیتر
                       </li>
                       <li>
                         <i className="far fa-car" />
-                        Model: {car.Model}
+                        مدل: {car.Model}
                       </li>
                       <li>
                         <i className="far fa-gas-pump" />
-                        Hybrid
+                        {car.Fuel}
                       </li>
                     </ul>
                     <div className="car-footer">
-                      <span className="car-price">تومان {car.Rental}</span>
+                      <span className="car-price">{car.Rental}تومان/ساعت </span>
 
                       <Link to={`/post/${car.id}`} className="theme-btn">
                         <span className="far fa-eye" />
-                        Details
+                        جزییات
                       </Link>
                     </div>
                   </div>
+                  <a
+                    to={"#"}
+                    className="theme-btn"
+                    style={{
+                      width: "90%",
+                      margin: "0 20px",
+                      background: "var(--color-blue)",
+                    }}
+                    onClick={openModal}
+                  >
+                    {/* <span className="far fa-eye" /> */}
+
+                    {/* {isModalOpen && ( */}
+                    <TransitionsModal title="سفارش سریع" onClose={closeModal} />
+                    {/* )} */}
+                  </a>
                 </div>
               </div>
             );
           })}
-        </div>
-        <div className="text-center mt-4">
-          <a href="#" className="theme-btn">
-            Load More <i className="far fa-arrow-rotate-right" />{" "}
-          </a>
         </div>
       </div>
     </div>

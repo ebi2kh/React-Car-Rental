@@ -12,14 +12,15 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "100%",
+  height: "100%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-export default function TransitionsModal() {
+export default function TransitionsModal({ title }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -28,7 +29,7 @@ export default function TransitionsModal() {
     <div>
       <Button className="theme-btn" onClick={handleOpen}>
         <span className="far fa-eye" />
-        Open modal
+        {title}
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"

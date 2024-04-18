@@ -24,7 +24,7 @@ export const Form = () => {
     <div className="find-car">
       <div className="container">
         <div className="find-car-form">
-          <h4 className="find-car-title">Let's Find Your Perfect Car</h4>
+          <h4 className="find-car-title">ماشین مدنظر خود را پیدا کنید</h4>
           <form action="#" onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-lg-3">
@@ -182,7 +182,7 @@ export const Form = () => {
               </div>
               <div className="col-lg-3 align-self-end">
                 <button className="theme-btn" type="submit">
-                  <span className="far fa-search" /> Find Your Car
+                  <span className="far fa-search" /> جستجو کنید
                 </button>
               </div>
             </div>
