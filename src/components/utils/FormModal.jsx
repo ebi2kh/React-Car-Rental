@@ -11,6 +11,136 @@ export const FormModal = () => {
   const [isLocation2Open, setIsLocation2Open] = useState(false);
   const [isMakeOpen, setIsMakeOpen] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
+
+  // Simple validation for the input field to ensure it is not empty and has at least 3 characters
+  // const [form, setForm] = useState({
+  //   نام: "",
+  //   نام_خانوادگی: "",
+  //   کد_ملی: "",
+  //   محل_تحویل: "",
+  // });
+
+  // const handleInputChange = (e) => {
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+  // };
+
+  // const validateForm = () => {
+  //   let isValid = true;
+  //   let errors = {};
+
+  //   if (!form.name || form.نام.length < 3) {
+  //     isValid = false;
+  //     errors["نام"] = "نام should be at least 3 characters long";
+  //   }
+
+  //   if (!form.نام_خانوادگی || form.نام_خانوادگی.length < 3) {
+  //     isValid = false;
+  //     errors["نام_خانوادگی"] =
+  //       "نام خانوادگی should be at least 3 characters long";
+  //   }
+
+  //   if (!form.کد_ملی || isNaN(form.کد_ملی)) {
+  //     isValid = false;
+  //     errors["کد_ملی"] = "کد ملی should be a number";
+  //   }
+
+  //   if (!form.محل_تحویل || form.محل_تحویل === "انتخاب کنید") {
+  //     isValid = false;
+  //     errors["محل_تحویل"] = "You must select a محل تحویل";
+  //   }
+
+  //   if (!isValid) {
+  //     console.log(errors);
+  //   }
+
+  //   return isValid;
+  // };
+
+  const [formErrors, setFormErrors] = useState({});
+  const [form, setForm] = useState({
+    نام: "",
+    نام_خانوادگی: "",
+    کد_ملی: "",
+    ایمیل: "",
+
+    // Add other form fields as needed
+  });
+  const validateForm = () => {
+    let errors = {};
+    let formIsValid = true;
+
+    // Name validation
+    if (!form.نام.trim()) {
+      errors.نام = "نام نمی‌تواند خالی باشد";
+      formIsValid = false;
+    } else if (form.نام.length < 3) {
+      errors.نام = "نام باید حداقل 3 کاراکتر باشد";
+      formIsValid = false;
+    }
+
+    // Family Name validation
+    if (!form.نام_خانوادگی.trim()) {
+      errors.نام_خانوادگی = "نام خانوادگی نمی‌تواند خالی باشد";
+      formIsValid = false;
+    } else if (form.نام_خانوادگی.length < 3) {
+      errors.نام_خانوادگی = "نام خانوادگی باید حداقل 3 کاراکتر باشد";
+      formIsValid = false;
+    }
+
+    // Inside your validateForm function
+    if (!form.کد_ملی) {
+      errors.کد_ملی = "کد ملی نمی‌تواند خالی باشد";
+      formIsValid = false;
+    } else if (form.کد_ملی.length < 8 || form.کد_ملی.length > 10) {
+      // Adjust length check as needed
+      errors.کد_ملی = "کد ملی باید بین 8 تا 10 رقم باشد";
+      formIsValid = false;
+    }
+
+    // Email validation (simple pattern)
+    if (form.ایمیل) {
+      let lastAtPos = form.ایمیل.lastIndexOf("@");
+      let lastDotPos = form.ایمیل.lastIndexOf(".");
+      if (!form.ایمیل) {
+        errors.ایمیل = "ایمیل نمی‌تواند خالی باشد";
+      }
+      if (
+        !(
+          lastAtPos < lastDotPos &&
+          lastAtPos > 0 &&
+          form.ایمیل.indexOf("@@") == -1 &&
+          lastDotPos > 2 &&
+          form.ایمیل.length - lastDotPos > 2
+        )
+      ) {
+        errors.ایمیل = "ایمیل نامعتبر است";
+        formIsValid = false;
+      }
+    }
+
+    // Update the state with errors
+    setFormErrors(errors);
+    console.log(formErrors);
+    return formIsValid;
+  };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  // ////////////////////////
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Proceed with form submission or further processing
+      console.log("Form is valid");
+    } else {
+      console.log("Form has errors");
+    }
+  };
+
   return (
     <div style={{ maxHeight: "600px", width: "90vh", overflowY: "auto" }}>
       <div className="user-profile-wrapper">
@@ -19,36 +149,52 @@ export const FormModal = () => {
           <div className="col-lg-12">
             <div className="add-listing-form">
               <h6 className="mb-1">اطلاعات شخصی</h6>
-              <form action="#">
+              <form onSubmit={handleSubmit}>
                 <div className="row align-items-center">
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>نام</label>
                       <input
+                        name="نام"
                         type="text"
                         className="form-control"
                         placeholder="نام خود را وارد کنید"
+                        value={form.نام}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.نام && <div>{formErrors.نام} </div>}
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>نام خانوادگی</label>
                       <input
+                        name="نام_خانوادگی"
                         type="text"
                         className="form-control"
                         placeholder="نام خانوادگی خود را وارد کنید"
+                        value={form.نام_خانوادگی}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.نام_خانوادگی && (
+                        <div>{formErrors.نام_خانوادگی}</div>
+                      )}
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>کد ملی</label>
                       <input
+                        name="کد_ملی"
                         type="text"
                         className="form-control"
                         placeholder="کد ملی خود را وارد کنید"
+                        value={form.کد_ملی}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.کد_ملی && (
+                        <div className="text-danger">{formErrors.کد_ملی}</div>
+                      )}
                     </div>
                   </div>
 
@@ -71,7 +217,16 @@ export const FormModal = () => {
                           isLocationOpen ? "open" : ""
                         }`}
                         tabIndex={0}
-                        onClick={() => setIsLocationOpen(!isLocationOpen)}
+                        name="محل_تحویل"
+                        onClick={() => {
+                          setIsLocationOpen(!isLocationOpen);
+                          handleInputChange({
+                            target: {
+                              name: "محل_تحویل",
+                              value: selectedLocation,
+                            },
+                          });
+                        }}
                       >
                         <span className="current">{selectedLocationText}</span>
                         <ul className="list">
@@ -169,17 +324,21 @@ export const FormModal = () => {
                     <div className="form-group">
                       <label>ایمیل</label>
                       <input
-                        type="text"
+                        type="email"
+                        name="ایمیل"
                         className="form-control"
                         placeholder="ایمیل خود را وارد کنید"
+                        value={form.ایمیل}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.ایمیل && <div>{formErrors.ایمیل}</div>}
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>تلفن</label>
                       <input
-                        type="text"
+                        type="tel"
                         className="form-control"
                         placeholder="تلفن خود را وارد کنید"
                       />
@@ -209,7 +368,7 @@ export const FormModal = () => {
                     <div className="form-group">
                       <label>کد پستی</label>
                       <input
-                        type="text"
+                        type="number"
                         className="form-control"
                         placeholder="کد پستی را وارد کنید"
                       />

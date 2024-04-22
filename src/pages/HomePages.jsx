@@ -16,7 +16,7 @@ const HomePages = () => {
       <Form />
       <CarGrid />
       <Counter />
-      <Testimonials />
+
       <Choose />
       <Download />
     </>

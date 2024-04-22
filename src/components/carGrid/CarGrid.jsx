@@ -104,6 +104,7 @@ export const CarGrid = () => {
                       width: "90%",
                       margin: "0 20px",
                       background: "var(--color-blue)",
+                      color: "white",
                     }}
                     onClick={openModal}
                   >

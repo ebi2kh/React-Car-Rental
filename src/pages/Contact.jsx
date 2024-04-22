@@ -1,21 +1,12 @@
 import React from "react";
-
+import im from "../assets/img/breadcrumb/01.jpg";
 const Contact = () => {
   return (
     <>
       <main className="main">
-        <div
-          className="site-breadcrumb"
-          style={{ background: "url(assets/img/breadcrumb/01.jpg)" }}
-        >
+        <div className="site-breadcrumb" style={{ background: `url(${im})` }}>
           <div className="container">
-            <h2 className="breadcrumb-title">Contact Us</h2>
-            <ul className="breadcrumb-menu">
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-              <li className="active">Contact Us</li>
-            </ul>
+            <h2 className="breadcrumb-title">تماس با ما</h2>
           </div>
         </div>
         <div className="contact-area py-120">
@@ -28,8 +19,8 @@ const Contact = () => {
                       <i className="fal fa-map-location-dot" />
                     </div>
                     <div className="contact-info-content">
-                      <h5>Office Address</h5>
-                      <p>25/B Milford, New York, USA</p>
+                      <h5>آدرس دفتر</h5>
+                      <p>تهران ولیعصر</p>
                     </div>
                   </div>
                 </div>
@@ -39,7 +30,7 @@ const Contact = () => {
                       <i className="fal fa-phone-volume" />
                     </div>
                     <div className="contact-info-content">
-                      <h5>Call Us</h5>
+                      <h5>تماس با ما</h5>
                       <p>+2 123 4565 789</p>
                     </div>
                   </div>
@@ -50,7 +41,7 @@ const Contact = () => {
                       <i className="fal fa-envelopes" />
                     </div>
                     <div className="contact-info-content">
-                      <h5>Email Us</h5>
+                      <h5>ایمیل</h5>
                       <p>
                         <a
                           href="/cdn-cgi/l/email-protection"
@@ -69,8 +60,8 @@ const Contact = () => {
                       <i className="fal fa-alarm-clock" />
                     </div>
                     <div className="contact-info-content">
-                      <h5>Open Time</h5>
-                      <p>Mon - Sat (10.00AM - 05.30PM)</p>
+                      <h5>ساعات کاری</h5>
+                      <p>شنبه-پنج‌شنبه</p>
                     </div>
                   </div>
                 </div>
@@ -86,19 +77,14 @@ const Contact = () => {
                 <div className="col-lg-6 align-self-center">
                   <div className="contact-form">
                     <div className="contact-form-header">
-                      <h2>Get In Touch</h2>
+                      <h2>تماس یا ما</h2>
                       <p>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page randomised
-                        words which don't look even slightly when looking at its
-                        layout.{" "}
+                        ما در اینجا هستیم تا به شما بهترین تجربه اجاره خودرو را
+                        بدهیم. با ما، شما می توانید از خودروهای با کیفیت بالا با
+                        قیمت مناسب لذت ببرید.
                       </p>
                     </div>
-                    <form
-                      method="post"
-                      action="/motex/assets/php/contact.php"
-                      id="contact-form"
-                    >
+                    <form method="post" id="contact-form">
                       <div className="row">
                         <div className="col-md-6">
                           <div className="form-group">
@@ -106,7 +92,7 @@ const Contact = () => {
                               type="text"
                               className="form-control"
                               name="name"
-                              placeholder="Your Name"
+                              placeholder="نام"
                               required=""
                             />
                           </div>
@@ -117,7 +103,7 @@ const Contact = () => {
                               type="email"
                               className="form-control"
                               name="email"
-                              placeholder="Your Email"
+                              placeholder="ایمیل"
                               required=""
                             />
                           </div>
@@ -128,7 +114,7 @@ const Contact = () => {
                           type="text"
                           className="form-control"
                           name="subject"
-                          placeholder="Your Subject"
+                          placeholder="موضوع"
                           required=""
                         />
                       </div>
@@ -138,12 +124,12 @@ const Contact = () => {
                           cols={30}
                           rows={5}
                           className="form-control"
-                          placeholder="Write Your Message"
+                          placeholder="پیامتان را بنویسید"
                           defaultValue={""}
                         />
                       </div>
                       <button type="submit" className="theme-btn">
-                        Send Message <i className="far fa-paper-plane" />
+                        ارسال پیام <i className="far fa-paper-plane" />
                       </button>
                       <div className="col-md-12 mt-3">
                         <div className="form-messege text-success" />

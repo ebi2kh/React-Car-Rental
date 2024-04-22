@@ -17,16 +17,15 @@ export const Choose = () => {
                 }}
               >
                 <span className="site-title-tagline text-white justify-content-start">
-                  <i className="flaticon-drive" /> Why Choose Us
+                  <i className="flaticon-drive" /> چرا ما را انتخاب کنید
                 </span>
                 <h2 className="site-title text-white mb-10">
-                  We are dedicated <span>to provide</span> quality service
+                  ما به ارائه خدمات با کیفیت <span>تعهد داریم</span>
                 </h2>
                 <p className="text-white">
-                  There are many variations of passages available but the
-                  majority have suffered alteration in some form going to use a
-                  passage by injected humour randomised words which don't look
-                  even slightly believable.
+                  ما در اینجا هستیم تا به شما بهترین تجربه اجاره خودرو را بدهیم.
+                  با ما، شما می توانید از خودروهای با کیفیت بالا با قیمت مناسب
+                  لذت ببرید.
                 </p>
               </div>
               <div
@@ -60,11 +59,11 @@ export const Choose = () => {
                       <i className="flaticon-car" />
                     </div>
                     <div className="choose-item-info">
-                      <h3>Best Quality Cars</h3>
+                      <h3>بهترین خودروهای </h3>
                       <p>
-                        There are many variations of the passages available but
-                        the majo have suffered fact that reader will be dist
-                        alteration.
+                        ما افتخار می کنیم که بهترین و مدرن ترین خودروها را در
+                        اختیار شما قرار می دهیم. همه خودروهای ما توسط مکانیک های
+                        مجرب تعمیر و نگهداری می شوند.
                       </p>
                     </div>
                   </div>
@@ -74,11 +73,11 @@ export const Choose = () => {
                       <i className="flaticon-drive-thru" />
                     </div>
                     <div className="choose-item-info">
-                      <h3>Popular Brands</h3>
+                      <h3>برندهای محبوب</h3>
                       <p>
-                        There are many variations of the passages available but
-                        the majo have suffered fact that reader will be dist
-                        alteration.
+                        ما خودروهایی از برندهای معتبر و محبوب را در اختیار شما
+                        قرار می دهیم. از برندهای محلی تا بین المللی، ما همه چیز
+                        را داریم.
                       </p>
                     </div>
                   </div>
@@ -90,11 +89,11 @@ export const Choose = () => {
                       <i className="flaticon-chauffeur" />
                     </div>
                     <div className="choose-item-info">
-                      <h3>Certified Mechanics</h3>
+                      <h3>مکانیک های مجاز</h3>
                       <p>
-                        There are many variations of the passages available but
-                        the majo have suffered fact that reader will be dist
-                        alteration.
+                        تیم ما شامل مکانیک های مجرب و مجاز است که می توانند
+                        خودروهای ما را در وضعیت عالی نگه دارند. با ما، شما می
+                        توانید با خیال راحت سفر کنید.
                       </p>
                     </div>
                   </div>
@@ -104,11 +103,11 @@ export const Choose = () => {
                       <i className="flaticon-online-payment" />
                     </div>
                     <div className="choose-item-info">
-                      <h3>Reasonable Price</h3>
+                      <h3>پرداخت آنلاین</h3>
                       <p>
-                        There are many variations of the passages available but
-                        the majo have suffered fact that reader will be dist
-                        alteration.
+                        ما پرداخت آنلاین را برای راحتی شما فراهم کرده ایم. با
+                        چند کلیک ساده، شما می توانید خودروی مورد نظر خود را رزرو
+                        کنید.
                       </p>
                     </div>
                   </div>

@@ -44,6 +44,7 @@ function App() {
             <Route path="/" element={<HomePages />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="form" element={<FormModal />} />
             <Route path="modal" element={<TransitionsModal />} />
             <Route path="/post/:id" element={<CarSingle />} />
             <Route path="*" element={<NotFound />} />

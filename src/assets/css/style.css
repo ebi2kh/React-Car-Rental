@@ -4024,7 +4024,7 @@ label {
 }
 .download-img {
   position: absolute;
-  right: -50px;
+  right: 500px;
   bottom: -120px;
   width: 62%;
 }

@@ -12,9 +12,9 @@ export const Footer = () => {
                   <img src="assets/img/logo/logo-light.png" alt="" />
                 </a>
                 <p className="mb-3">
-                  We are many variations of passages available but the majority
-                  have suffered alteration in some form by injected humour words
-                  believable.
+                  ما در اینجا هستیم تا به شما بهترین تجربه اجاره خودرو را بدهیم.
+                  با ما، شما می توانید از خودروهای با کیفیت بالا با قیمت مناسب
+                  لذت ببرید.
                 </p>
                 <ul className="footer-contact">
                   <li>
@@ -25,54 +25,43 @@ export const Footer = () => {
                   </li>
                   <li>
                     <i className="far fa-map-marker-alt" />
-                    25/B Milford Road, New York
-                  </li>
-                  <li>
-                    <a href="/cdn-cgi/l/email-protection#88e1e6eee7c8edf0e9e5f8e4eda6ebe7e5">
-                      <i className="far fa-envelope" />
-                      <span
-                        className="__cf_email__"
-                        data-cfemail="640d0a020b24011c05091408014a070b09"
-                      >
-                        [email&nbsp;protected]
-                      </span>
-                    </a>
+                    تهران ولیعصر
                   </li>
                 </ul>
               </div>
             </div>
             <div className="col-md-6 col-lg-2">
               <div className="footer-widget-box list">
-                <h4 className="footer-widget-title">Quick Links</h4>
+                <h4 className="footer-widget-title">لینک های سریع</h4>
                 <ul className="footer-list">
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> About Us
+                      <i className="fas fa-caret-right" /> درباره ما
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Update News
+                      <i className="fas fa-caret-right" /> آخرین اخبار
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Testimonials
+                      <i className="fas fa-caret-right" /> نظرات
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Terms Of Service
+                      <i className="fas fa-caret-right" /> شرایط خدمات
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Privacy policy
+                      <i className="fas fa-caret-right" /> سیاست حفظ حریم خصوصی
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Our Dealers
+                      <i className="fas fa-caret-right" /> فروشندگان ما
                     </a>
                   </li>
                 </ul>
@@ -80,36 +69,36 @@ export const Footer = () => {
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="footer-widget-box list">
-                <h4 className="footer-widget-title">Support Center</h4>
+                <h4 className="footer-widget-title">مرکز پشتیبانی</h4>
                 <ul className="footer-list">
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> FAQ's
+                      <i className="fas fa-caret-right" /> سوالات متداول
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Affiliates
+                      <i className="fas fa-caret-right" /> همکاران
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Booking Tips
+                      <i className="fas fa-caret-right" /> نکات رزرو
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Sell Vehicles
+                      <i className="fas fa-caret-right" /> فروش خودروها
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Contact Us
+                      <i className="fas fa-caret-right" /> تماس با ما
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <i className="fas fa-caret-right" /> Sitemap
+                      <i className="fas fa-caret-right" /> نقشه سایت
                     </a>
                   </li>
                 </ul>
@@ -117,18 +106,21 @@ export const Footer = () => {
             </div>
             <div className="col-md-6 col-lg-3">
               <div className="footer-widget-box list">
-                <h4 className="footer-widget-title">Newsletter</h4>
+                <h4 className="footer-widget-title">خبرنامه</h4>
                 <div className="footer-newsletter">
-                  <p>Subscribe Our Newsletter To Get Latest Update And News</p>
+                  <p>
+                    برای دریافت آخرین به روزرسانی ها و اخبار، خبرنامه ما را
+                    مشترک شوید
+                  </p>
                   <div className="subscribe-form">
                     <form action="#">
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="Your Email"
+                        placeholder="ایمیل شما"
                       />
                       <button className="theme-btn" type="submit">
-                        Subscribe Now <i className="far fa-paper-plane" />
+                        اکنون مشترک شوید <i className="far fa-paper-plane" />
                       </button>
                     </form>
                   </div>
@@ -143,8 +135,8 @@ export const Footer = () => {
           <div className="row">
             <div className="col-md-6 align-self-center">
               <p className="copyright-text">
-                © Copyright <span id="date">2024</span> <a href="#"> MOTEX </a>{" "}
-                All Rights Reserved.
+                © Copyright <span id="date">2024</span>{" "}
+                <a href="#"> ریکت خودرو </a> تمام حقوق محفوظ است.
               </p>
             </div>
             <div className="col-md-6 align-self-center">

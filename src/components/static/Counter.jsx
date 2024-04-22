@@ -2,7 +2,7 @@ import React from "react";
 
 export const Counter = () => {
   return (
-    <div class="counter-area pt-30 pb-30">
+    <div class="counter-area pt-30 pb-30" style={{ background: "#0c1961" }}>
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-sm-6">
@@ -17,9 +17,9 @@ export const Counter = () => {
                   data-to="500"
                   data-speed="3000"
                 >
-                  500
+                  30
                 </span>
-                <h6 class="title">+ Available Cars </h6>
+                <h6 class="title">+ ماشین‌های موجود </h6>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@ export const Counter = () => {
                 >
                   900
                 </span>
-                <h6 class="title">+ Happy Clients</h6>
+                <h6 class="title">+ مشتریان</h6>
               </div>
             </div>
           </div>
@@ -53,9 +53,9 @@ export const Counter = () => {
                   data-to="1500"
                   data-speed="3000"
                 >
-                  1500
+                  400
                 </span>
-                <h6 class="title">+ Team Workers</h6>
+                <h6 class="title">+ کارمندان</h6>
               </div>
             </div>
           </div>
@@ -71,9 +71,9 @@ export const Counter = () => {
                   data-to="30"
                   data-speed="3000"
                 >
-                  30
+                  7
                 </span>
-                <h6 class="title">+ Years Of Experience</h6>
+                <h6 class="title">+ سال تخصص</h6>
               </div>
             </div>
           </div>
