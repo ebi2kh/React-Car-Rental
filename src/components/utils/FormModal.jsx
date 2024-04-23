@@ -12,58 +12,18 @@ export const FormModal = () => {
   const [isMakeOpen, setIsMakeOpen] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
-  // Simple validation for the input field to ensure it is not empty and has at least 3 characters
-  // const [form, setForm] = useState({
-  //   نام: "",
-  //   نام_خانوادگی: "",
-  //   کد_ملی: "",
-  //   محل_تحویل: "",
-  // });
-
-  // const handleInputChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-
-  // const validateForm = () => {
-  //   let isValid = true;
-  //   let errors = {};
-
-  //   if (!form.name || form.نام.length < 3) {
-  //     isValid = false;
-  //     errors["نام"] = "نام should be at least 3 characters long";
-  //   }
-
-  //   if (!form.نام_خانوادگی || form.نام_خانوادگی.length < 3) {
-  //     isValid = false;
-  //     errors["نام_خانوادگی"] =
-  //       "نام خانوادگی should be at least 3 characters long";
-  //   }
-
-  //   if (!form.کد_ملی || isNaN(form.کد_ملی)) {
-  //     isValid = false;
-  //     errors["کد_ملی"] = "کد ملی should be a number";
-  //   }
-
-  //   if (!form.محل_تحویل || form.محل_تحویل === "انتخاب کنید") {
-  //     isValid = false;
-  //     errors["محل_تحویل"] = "You must select a محل تحویل";
-  //   }
-
-  //   if (!isValid) {
-  //     console.log(errors);
-  //   }
-
-  //   return isValid;
-  // };
-
   const [formErrors, setFormErrors] = useState({});
   const [form, setForm] = useState({
     نام: "",
     نام_خانوادگی: "",
     کد_ملی: "",
     ایمیل: "",
-
-    // Add other form fields as needed
+    تلفن: "",
+    استان: "",
+    شهر: "",
+    کد_پستی: "",
+    آدرس_کامل: "",
+    agree: false,
   });
   const validateForm = () => {
     let errors = {};
@@ -98,12 +58,13 @@ export const FormModal = () => {
     }
 
     // Email validation (simple pattern)
-    if (form.ایمیل) {
+    // Inside your validateForm function
+    if (!form.ایمیل) {
+      errors.ایمیل = "ایمیل نمی‌تواند خالی باشد";
+      formIsValid = false;
+    } else {
       let lastAtPos = form.ایمیل.lastIndexOf("@");
       let lastDotPos = form.ایمیل.lastIndexOf(".");
-      if (!form.ایمیل) {
-        errors.ایمیل = "ایمیل نمی‌تواند خالی باشد";
-      }
       if (
         !(
           lastAtPos < lastDotPos &&
@@ -118,6 +79,46 @@ export const FormModal = () => {
       }
     }
 
+    if (!form.محل_تحویل || form.محل_تحویل === "") {
+      errors.محل_تحویل = "محل تحویل باید انتخاب شود"; // Delivery place must be selected
+      formIsValid = false;
+    }
+
+    if (!form.محل_بازگشت || form.محل_بازگشت === "") {
+      errors.محل_بازگشت = "محل بازگشت باید انتخاب شود"; // Return place must be selected
+      formIsValid = false;
+    }
+
+    if (!form.تلفن.trim()) {
+      errors.تلفن = "تلفن نمی‌تواند خالی باشد";
+      formIsValid = false;
+    }
+
+    if (!form.استان.trim()) {
+      errors.استان = "استان نمی‌تواند خالی باشد";
+      formIsValid = false;
+    }
+
+    if (!form.شهر.trim()) {
+      errors.شهر = "شهر نمی‌تواند خالی باشد";
+      formIsValid = false;
+    }
+
+    if (!form.کد_پستی.trim()) {
+      errors.کد_پستی = "کد پستی نمی‌تواند خالی باشد";
+      formIsValid = false;
+    }
+
+    if (!form.آدرس_کامل.trim()) {
+      errors.آدرس_کامل = "آدرس کامل نمی‌تواند خالی باشد";
+      formIsValid = false;
+    }
+
+    if (!form.agree) {
+      errors.agree =
+        "شما باید با شرایط خدمات و سیاست حفظ حریم خصوصی موافقت کنید";
+      formIsValid = false;
+    }
     // Update the state with errors
     setFormErrors(errors);
     console.log(formErrors);
@@ -162,7 +163,9 @@ export const FormModal = () => {
                         value={form.نام}
                         onChange={handleInputChange}
                       />
-                      {formErrors.نام && <div>{formErrors.نام} </div>}
+                      {formErrors.نام && (
+                        <div className="text-danger">{formErrors.نام} </div>
+                      )}
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -177,7 +180,9 @@ export const FormModal = () => {
                         onChange={handleInputChange}
                       />
                       {formErrors.نام_خانوادگی && (
-                        <div>{formErrors.نام_خانوادگی}</div>
+                        <div className="text-danger">
+                          {formErrors.نام_خانوادگی}
+                        </div>
                       )}
                     </div>
                   </div>
@@ -201,121 +206,69 @@ export const FormModal = () => {
                   <div className="col-lg-8">
                     <div className="form-group">
                       <label>محل تحویل</label>
-                      <select className="select" style={{ display: "none" }}>
-                        <option value={1}>انتخاب کنید</option>
-                        {[...new Set(cars.map((car) => car.Location))].map(
-                          (location, index) => (
-                            <option key={index} value={index + 2}>
-                              {location}
-                            </option>
-                          )
-                        )}
-                      </select>
-
-                      <div
-                        className={`nice-select select ${
-                          isLocationOpen ? "open" : ""
-                        }`}
-                        tabIndex={0}
+                      <select
                         name="محل_تحویل"
-                        onClick={() => {
-                          setIsLocationOpen(!isLocationOpen);
-                          handleInputChange({
-                            target: {
-                              name: "محل_تحویل",
-                              value: selectedLocation,
-                            },
-                          });
-                        }}
+                        className="nice-select select center"
+                        value={form.محل_تحویل}
+                        onChange={handleInputChange}
                       >
-                        <span className="current">{selectedLocationText}</span>
-                        <ul className="list">
-                          <li data-value={1} className="option selected">
-                            انتخاب کنید
-                          </li>
-                          {[...new Set(cars.map((car) => car.Location))].map(
-                            (location, index) => (
-                              <li
-                                key={index}
-                                data-value={index + 2}
-                                className="option"
-                                onClick={() => {
-                                  setSelectedLocation(location);
-                                  setSelectedLocationText(location);
-                                }}
-                              >
-                                {location}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
+                        <option value="">انتخاب کنید</option>
+                        <option value="option1">تهران</option>
+                        <option value="option2">شیراز</option>
+                        <option value="option3">اصفهان</option>
+                      </select>
+                      {formErrors.محل_تحویل && (
+                        <div className="text-danger">
+                          {formErrors.محل_تحویل}
+                        </div>
+                      )}
                     </div>
                   </div>
 
                   <div className="col-lg-8">
                     <div className="form-group">
                       <label>محل بازگشت</label>
-                      <select className="select" style={{ display: "none" }}>
-                        <option value={1}>انتخاب کنید</option>
-                        {[...new Set(cars.map((car) => car.Location))].map(
-                          (location, index) => (
-                            <option key={index} value={index + 2}>
-                              {location}
-                            </option>
-                          )
-                        )}
-                      </select>
-
-                      <div
-                        className={`nice-select select ${
-                          isLocation2Open ? "open" : ""
-                        }`}
-                        tabIndex={0}
-                        onClick={() => setIsLocation2Open(!isLocation2Open)}
+                      <select
+                        name="محل_بازگشت"
+                        className="nice-select select center"
+                        value={form.محل_بازگشت}
+                        onChange={handleInputChange}
                       >
-                        <span className="current">انتخاب کنید</span>
-                        <ul className="list">
-                          <li data-value={1} className="option selected">
-                            انتخاب کنید
-                          </li>
-                          {[...new Set(cars.map((car) => car.Location))].map(
-                            (location, index) => (
-                              <li
-                                key={index}
-                                data-value={index + 2}
-                                className="option"
-                              >
-                                {location}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </div>
+                        <option value="">انتخاب کنید</option>
+                        <option value="option1">تهران</option>
+                        <option value="option2">شیراز</option>
+                        <option value="option3">اصفهان</option>
+                      </select>
+                      {formErrors.محل_بازگشت && (
+                        <div className="text-danger">
+                          {formErrors.محل_بازگشت}
+                        </div>
+                      )}
                     </div>
                   </div>
+
                   <div className="col-lg-8">
                     <div className="form-group">
                       <label>تاریخ تحویل</label>
-                      <div className="nice-select select open" tabIndex={0}>
-                        <DatePicker
-                          selected={startDate}
-                          onChange={(date) => setStartDate(date)}
-                          dateFormat="dd/MM/yyyy"
-                        />
-                      </div>
+
+                      <DatePicker
+                        className="nice-select select open"
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        dateFormat="dd/MM/yyyy"
+                      />
                     </div>
                   </div>
                   <div className="col-lg-8">
                     <div className="form-group">
                       <label>تاریخ بازگشت</label>
-                      <div className="nice-select select open" tabIndex={0}>
-                        <DatePicker
-                          selected={startDate}
-                          onChange={(date) => setStartDate(date)}
-                          dateFormat="dd/MM/yyyy"
-                        />
-                      </div>
+
+                      <DatePicker
+                        className="nice-select select open"
+                        selected={startDate}
+                        onChange={(date) => setStartDate(date)}
+                        dateFormat="dd/MM/yyyy"
+                      />
                     </div>
                   </div>
                   <h6 className="fw-bold mt-4 mb-1"> اطلاعات تماس و آدرس</h6>
@@ -331,27 +284,43 @@ export const FormModal = () => {
                         value={form.ایمیل}
                         onChange={handleInputChange}
                       />
-                      {formErrors.ایمیل && <div>{formErrors.ایمیل}</div>}
+                      {formErrors.ایمیل && (
+                        <div className="text-danger">{formErrors.ایمیل}</div>
+                      )}
                     </div>
                   </div>
+
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>تلفن</label>
                       <input
+                        name="تلفن"
                         type="tel"
                         className="form-control"
                         placeholder="تلفن خود را وارد کنید"
+                        value={form.تلفن}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.تلفن && (
+                        <div className="text-danger">{formErrors.تلفن}</div>
+                      )}
                     </div>
                   </div>
+
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>استان</label>
                       <input
+                        name="استان"
                         type="text"
                         className="form-control"
                         placeholder="استان خود را وارد کنید"
+                        value={form.استان}
+                        onChange={handleInputChange}
                       />
+                      {formErrors.استان && (
+                        <div className="text-danger">{formErrors.استان}</div>
+                      )}
                     </div>
                   </div>
                   <div className="col-lg-6">
@@ -359,19 +328,31 @@ export const FormModal = () => {
                       <label>شهر</label>
                       <input
                         type="text"
+                        name="شهر"
                         className="form-control"
+                        value={form.شهر}
+                        onChange={handleInputChange}
                         placeholder="شهر خود را وارد کنید"
                       />
+                      {formErrors.شهر && (
+                        <div className="text-danger">{formErrors.شهر}</div>
+                      )}
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="form-group">
                       <label>کد پستی</label>
                       <input
+                        name="کد_پستی"
+                        value={form.کد_پستی}
+                        onChange={handleInputChange}
                         type="number"
                         className="form-control"
                         placeholder="کد پستی را وارد کنید"
                       />
+                      {formErrors.کد_پستی && (
+                        <div className="text-danger">{formErrors.کد_پستی}</div>
+                      )}
                     </div>
                   </div>
 
@@ -379,27 +360,39 @@ export const FormModal = () => {
                     <div className="form-group">
                       <label>آدرس کامل</label>
                       <textarea
+                        name="آدرس_کامل"
+                        value={form.آدرس_کامل}
+                        onChange={handleInputChange}
                         className="form-control"
                         placeholder="آدرس"
                         cols={20}
                         rows={5}
                         defaultValue={""}
                       />
+                      {formErrors.آدرس_کامل && (
+                        <div className="text-danger">
+                          {formErrors.آدرس_کامل}
+                        </div>
+                      )}
                     </div>
                   </div>
 
                   <div className="col-12 mt-4">
                     <div className="form-check">
                       <input
-                        className="form-check-input"
                         name="agree"
+                        className="form-check-input"
                         type="checkbox"
-                        defaultValue=""
                         id="agree"
+                        checked={form.agree}
+                        onChange={handleInputChange}
                       />
                       <label className="form-check-label" htmlFor="agree">
                         من با شرایط خدمات و سیاست حفظ حریم خصوصی شما موافقم.
                       </label>
+                      {formErrors.agree && (
+                        <div className="text-danger">{formErrors.agree}</div>
+                      )}
                     </div>
                   </div>
                   <div className="col-lg-12 my-4">
