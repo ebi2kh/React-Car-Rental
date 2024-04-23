@@ -25,7 +25,7 @@ import HomePages from "./pages/HomePages.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import { FormModal } from "./components/utils/FormModal.jsx";
-import FormDemo from "./components/utils/FormDemo.jsx";
+
 function App() {
   return (
     <>
@@ -46,7 +46,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="form" element={<FormModal />} />
-            <Route path="modal" element={<FormDemo />} />
+
             <Route path="/post/:id" element={<CarSingle />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
