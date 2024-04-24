@@ -9,16 +9,16 @@ export const Faq = () => {
             <div className="faq-right">
               <div className="site-heading mb-3">
                 <span className="site-title-tagline justify-content-start">
-                  Faq's
+                  سوالات متداول
                 </span>
                 <h2 className="site-title my-3">
-                  General <span>frequently</span> asked questions
+                  سوالات <span>متداول</span> عمومی
                 </h2>
               </div>
               <p className="about-text">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even.
+                در این بخش، ما به سوالات متداول در مورد خدمات ما پاسخ می دهیم.
+                اگر سوالی دارید که در اینجا پاسخ داده نشده است، لطفا با ما تماس
+                بگیرید.
               </p>
               <div className="faq-img mt-3">
                 <img src="assets/img/faq/01.jpg" alt="" />
@@ -40,7 +40,7 @@ export const Faq = () => {
                     <span>
                       <i className="far fa-question" />
                     </span>{" "}
-                    How Long Does A Car Buy Take ?
+                    خرید خودرو چقدر طول می کشد؟
                   </button>
                 </h2>
                 <div
@@ -50,11 +50,9 @@ export const Faq = () => {
                   data-bs-parent="#accordionExample"
                 >
                   <div className="accordion-body">
-                    We denounce with righteous indignation and dislike men who
-                    are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire. Ante odio dignissim quam,
-                    vitae pulvinar turpis erat ac elit eu orci id odio facilisis
-                    pharetra.
+                    مدت زمان خرید خودرو بستگی به چندین عامل دارد، از جمله نوع
+                    خودرو، موجودیت، و شرایط مالی شما. در معمول، فرآیند خرید
+                    خودرو می تواند از چند روز تا چند هفته طول بکشد.
                   </div>
                 </div>
               </div>
@@ -71,21 +69,20 @@ export const Faq = () => {
                     <span>
                       <i className="far fa-question" />
                     </span>{" "}
-                    How Can I Become A Member ?
+                    چگونه می توانم عضو شوم؟
                   </button>
                 </h2>
                 <div
                   id="collapseTwo"
-                  className="accordion-collapse collapse"
+                  className="accordion-collapse collapse show"
                   aria-labelledby="headingTwo"
                   data-bs-parent="#accordionExample"
                 >
                   <div className="accordion-body">
-                    We denounce with righteous indignation and dislike men who
-                    are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire. Ante odio dignissim quam,
-                    vitae pulvinar turpis erat ac elit eu orci id odio facilisis
-                    pharetra.
+                    برای عضویت در سایت ما، ابتدا باید روی دکمه "ثبت نام" کلیک
+                    کنید. سپس، فرم ثبت نام را با اطلاعات خود پر کنید و روی دکمه
+                    "ثبت نام" کلیک کنید. پس از ثبت نام، شما می توانید از تمامی
+                    خدمات ما استفاده کنید.
                   </div>
                 </div>
               </div>
@@ -102,21 +99,19 @@ export const Faq = () => {
                     <span>
                       <i className="far fa-question" />
                     </span>{" "}
-                    What Payment Gateway You Support ?
+                    چه درگاه پرداختی پشتیبانی می کنید؟
                   </button>
                 </h2>
                 <div
                   id="collapseThree"
-                  className="accordion-collapse collapse"
+                  className="accordion-collapse collapse show"
                   aria-labelledby="headingThree"
                   data-bs-parent="#accordionExample"
                 >
                   <div className="accordion-body">
-                    We denounce with righteous indignation and dislike men who
-                    are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire. Ante odio dignissim quam,
-                    vitae pulvinar turpis erat ac elit eu orci id odio facilisis
-                    pharetra.
+                    ما از درگاه پرداخت های معتبری مانند PayPal، Stripe و Visa
+                    پشتیبانی می کنیم. شما می توانید با اطمینان از خدمات ما
+                    استفاده کنید.
                   </div>
                 </div>
               </div>
@@ -133,21 +128,19 @@ export const Faq = () => {
                     <span>
                       <i className="far fa-question" />
                     </span>{" "}
-                    How Can I Cancel My Request ?
+                    چگونه می توانم درخواست خود را لغو کنم؟
                   </button>
                 </h2>
                 <div
                   id="collapseFour"
-                  className="accordion-collapse collapse"
+                  className="accordion-collapse collapse show"
                   aria-labelledby="headingFour"
                   data-bs-parent="#accordionExample"
                 >
                   <div className="accordion-body">
-                    We denounce with righteous indignation and dislike men who
-                    are so beguiled and demoralized by the charms of pleasure of
-                    the moment, so blinded by desire. Ante odio dignissim quam,
-                    vitae pulvinar turpis erat ac elit eu orci id odio facilisis
-                    pharetra.
+                    برای لغو درخواست، شما باید وارد حساب کاربری خود شوید و به
+                    بخش "درخواست ها" بروید. سپس، روی درخواستی که می خواهید لغو
+                    کنید کلیک کنید و روی دکمه "لغو" کلیک کنید.
                   </div>
                 </div>
               </div>
@@ -158,3 +151,4 @@ export const Faq = () => {
     </div>
   );
 };
+export default Faq;

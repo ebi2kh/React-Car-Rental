@@ -17,6 +17,7 @@ import Counter from "./components/static/Counter";
 // import { Testimonials } from "./components/static/Testimonials";
 // import { CarGrid } from "./components/carGrid/CarGrid";
 import Footer from "./pages/Footer";
+import Faq from "./pages/Faq.jsx";
 import Choose from "./components/static/Choose";
 import Download from "./components/static/Download";
 import Testimonials from "./components/static/Testimonials";
@@ -46,7 +47,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="form" element={<FormModal />} />
-
+            <Route path="faq" element={<Faq />} />
             <Route path="/post/:id" element={<CarSingle />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

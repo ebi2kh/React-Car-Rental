@@ -33,6 +33,11 @@ export const Navbar = () => {
                     تماس با ما
                   </Link>
                 </li>
+                <li className="nav-item" style={{ margin: "0 20px" }}>
+                  <Link className="nav-link" to={"faq"}>
+                    سوالات متداول
+                  </Link>
+                </li>
               </ul>
               <div className="nav-right">
                 <div className="search-btn">
