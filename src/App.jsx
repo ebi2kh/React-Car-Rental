@@ -41,10 +41,12 @@ function App() {
 
       <BrowserRouter>
         <Navbar />
+
         <CarProvider>
           <Routes>
             <Route path="/" element={<HomePages />} />
             <Route path="about" element={<About />} />
+
             <Route path="contact" element={<Contact />} />
             <Route path="form" element={<FormModal />} />
             <Route path="faq" element={<Faq />} />

@@ -18,8 +18,10 @@ export const CarSingle = () => {
               <div className="car-single-details">
                 <div className="car-single-widget">
                   <div className="car-single-top">
-                    <span className="car-status status-1">Brand New</span>
-                    <h3 className="car-single-title">{car.Make}</h3>
+                    <span className="car-status status-1">جدید</span>
+                    <h3 className="car-single-title">
+                      {car.Make + " " + car.Model}
+                    </h3>
                     <ul className="car-single-meta">
                       <li>
                         <i className="far fa-clock" /> تاریخ: Sat, Jan 25, 2023
@@ -85,7 +87,7 @@ export const CarSingle = () => {
                             <i className="flaticon-speedometer" />
                           </div>
                           <div className="car-key-content">
-                            <span>مارمرد</span>
+                            <span>کارمرد</span>
                             <h6>50,000 (KM)</h6>
                           </div>
                         </div>
@@ -164,23 +166,19 @@ export const CarSingle = () => {
                     <h4 className="mb-3">توصیف</h4>
                     <div className="mb-4">
                       <p>
-                        There are many variations of passages orem psum
-                        available but the majority have suffered alteration in
-                        some form by injected humour or randomised words which
-                        don't look even slightly believable. If you are going to
-                        use a passage of Lorem Ipsum, you need to be sure there
-                        isn't anything embarrassing hidden in the middle of
-                        text. All the Lorem Ipsum generators on the Internet
-                        tend to repeat predefined chunks as necessary making
-                        this the first true generator on the internet.
+                        در اینجا، ما بهترین خدمات اجاره خودرو را ارائه می دهیم.
+                        با ما، شما می توانید از خودروهای با کیفیت بالا با قیمت
+                        مناسب لذت ببرید. ما افتخار می کنیم که بهترین و مدرن ترین
+                        خودروها را در اختیار شما قرار می دهیم. همه خودروهای ما
+                        توسط مکانیک های مجرب تعمیر و نگهداری می شوند.
                       </p>
                       <p className="mt-2">
-                        It is a long established fact that a reader will be
-                        distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of
-                        letters as opposed to using Content here content here
-                        making it look like readable English.
+                        ما می دانیم که انتخاب خودروی مناسب برای اجاره می تواند
+                        چالش برانگیز باشد. برای همین، ما در اینجا هستیم تا به
+                        شما کمک کنیم. با توجه به نیازها و ترجیحات شما، ما می
+                        توانیم بهترین خودرو را برای شما پیشنهاد دهیم. از
+                        خودروهای کوچک و اقتصادی گرفته تا خودروهای لوکس و بزرگ،
+                        ما همه چیز را داریم.
                       </p>
                     </div>
                     <h4 className="mb-3">ویژگی های دیگر خودرو</h4>
@@ -214,8 +212,19 @@ export const CarSingle = () => {
                         </ul>
                       </div>
                     </div>
-                    <TransitionsModal />
-                    <h4 className="mb-4">لوکیشن</h4>
+                    <a
+                      to={"#"}
+                      className="theme-btn"
+                      style={{
+                        width: "100%",
+                        margin: "0 20px",
+                        background: "var(--bs-code-color)",
+                        color: "black",
+                      }}
+                    >
+                      <TransitionsModal title="سفارش " />
+                    </a>
+                    {/* <h4 className="mb-4">لوکیشن</h4>
                     <div className="car-single-map">
                       <div className="contact-map">
                         <iframe
@@ -225,7 +234,7 @@ export const CarSingle = () => {
                           loading="lazy"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

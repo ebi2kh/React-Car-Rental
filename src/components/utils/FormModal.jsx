@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useCars } from "../../context/CarContext";
+import { Link } from "react-router-dom";
 export const FormModal = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedLocationText, setSelectedLocationText] =
@@ -25,6 +26,8 @@ export const FormModal = () => {
     آدرس_کامل: "",
     agree: false,
   });
+  const [isSubmitted, setIsSubmitted] = useState(false); // New state for tracking if the form has been submitted
+
   const validateForm = () => {
     let errors = {};
     let formIsValid = true;
@@ -136,276 +139,314 @@ export const FormModal = () => {
     e.preventDefault();
     if (validateForm()) {
       // Proceed with form submission or further processing
+      setIsSubmitted(true); // Update the state to indicate successful submission
       console.log("Form is valid");
     } else {
       console.log("Form has errors");
     }
   };
 
-  return (
-    <div style={{ maxHeight: "600px", width: "90vh", overflowY: "auto" }}>
-      <div className="user-profile-wrapper">
-        <div className="user-profile-card">
-          <h4 className="user-profile-card-title">رزرو خودرو</h4>
-          <div className="col-lg-12">
-            <div className="add-listing-form">
-              <h6 className="mb-1">اطلاعات شخصی</h6>
-              <form onSubmit={handleSubmit}>
-                <div className="row align-items-center">
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>نام</label>
-                      <input
-                        name="نام"
-                        type="text"
-                        className="form-control"
-                        placeholder="نام خود را وارد کنید"
-                        value={form.نام}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.نام && (
-                        <div className="text-danger">{formErrors.نام} </div>
-                      )}
+  if (isSubmitted) {
+    // If the form has been submitted and validated, show the success message
+    return (
+      <>
+        <div
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            fontWeight: "bold",
+            color: "green",
+            // Height: "70vh",
+            // width: "70vh",
+          }}
+        >
+          با موفقیت رزرو انجام شد
+        </div>
+        <div
+          className="col-lg-12 my-4"
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            fontWeight: "bold",
+            color: "green",
+            // Height: "70vh",
+            // width: "70vh",
+          }}
+        >
+          <Link to={"/"} className="theme-btn">
+            <span className="far fa-save" /> بازگشت به صفحه اصلی
+          </Link>
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <div style={{ maxHeight: "600px", width: "90vh", overflowY: "auto" }}>
+        <div className="user-profile-wrapper">
+          <div className="user-profile-card">
+            <h4 className="user-profile-card-title">رزرو خودرو</h4>
+            <div className="col-lg-12">
+              <div className="add-listing-form">
+                <h6 className="mb-1">اطلاعات شخصی</h6>
+                <form onSubmit={handleSubmit}>
+                  <div className="row align-items-center">
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>نام</label>
+                        <input
+                          name="نام"
+                          type="text"
+                          className="form-control"
+                          placeholder="نام خود را وارد کنید"
+                          value={form.نام}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.نام && (
+                          <div className="text-danger">{formErrors.نام} </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>نام خانوادگی</label>
-                      <input
-                        name="نام_خانوادگی"
-                        type="text"
-                        className="form-control"
-                        placeholder="نام خانوادگی خود را وارد کنید"
-                        value={form.نام_خانوادگی}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.نام_خانوادگی && (
-                        <div className="text-danger">
-                          {formErrors.نام_خانوادگی}
-                        </div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>نام خانوادگی</label>
+                        <input
+                          name="نام_خانوادگی"
+                          type="text"
+                          className="form-control"
+                          placeholder="نام خانوادگی خود را وارد کنید"
+                          value={form.نام_خانوادگی}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.نام_خانوادگی && (
+                          <div className="text-danger">
+                            {formErrors.نام_خانوادگی}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>کد ملی</label>
-                      <input
-                        name="کد_ملی"
-                        type="text"
-                        className="form-control"
-                        placeholder="کد ملی خود را وارد کنید"
-                        value={form.کد_ملی}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.کد_ملی && (
-                        <div className="text-danger">{formErrors.کد_ملی}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>کد ملی</label>
+                        <input
+                          name="کد_ملی"
+                          type="text"
+                          className="form-control"
+                          placeholder="کد ملی خود را وارد کنید"
+                          value={form.کد_ملی}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.کد_ملی && (
+                          <div className="text-danger">{formErrors.کد_ملی}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-8">
-                    <div className="form-group">
-                      <label>محل تحویل</label>
-                      <select
-                        name="محل_تحویل"
-                        className="nice-select select center"
-                        value={form.محل_تحویل}
-                        onChange={handleInputChange}
-                      >
-                        <option value="">انتخاب کنید</option>
-                        <option value="option1">تهران</option>
-                        <option value="option2">شیراز</option>
-                        <option value="option3">اصفهان</option>
-                      </select>
-                      {formErrors.محل_تحویل && (
-                        <div className="text-danger">
-                          {formErrors.محل_تحویل}
-                        </div>
-                      )}
+                    <div className="col-lg-8">
+                      <div className="form-group">
+                        <label>محل تحویل</label>
+                        <select
+                          name="محل_تحویل"
+                          className="nice-select select center"
+                          value={form.محل_تحویل}
+                          onChange={handleInputChange}
+                        >
+                          <option value="">انتخاب کنید</option>
+                          <option value="option1">تهران</option>
+                          <option value="option2">شیراز</option>
+                          <option value="option3">اصفهان</option>
+                        </select>
+                        {formErrors.محل_تحویل && (
+                          <div className="text-danger">
+                            {formErrors.محل_تحویل}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-8">
-                    <div className="form-group">
-                      <label>محل بازگشت</label>
-                      <select
-                        name="محل_بازگشت"
-                        className="nice-select select center"
-                        value={form.محل_بازگشت}
-                        onChange={handleInputChange}
-                      >
-                        <option value="">انتخاب کنید</option>
-                        <option value="option1">تهران</option>
-                        <option value="option2">شیراز</option>
-                        <option value="option3">اصفهان</option>
-                      </select>
-                      {formErrors.محل_بازگشت && (
-                        <div className="text-danger">
-                          {formErrors.محل_بازگشت}
-                        </div>
-                      )}
+                    <div className="col-lg-8">
+                      <div className="form-group">
+                        <label>محل بازگشت</label>
+                        <select
+                          name="محل_بازگشت"
+                          className="nice-select select center"
+                          value={form.محل_بازگشت}
+                          onChange={handleInputChange}
+                        >
+                          <option value="">انتخاب کنید</option>
+                          <option value="option1">تهران</option>
+                          <option value="option2">شیراز</option>
+                          <option value="option3">اصفهان</option>
+                        </select>
+                        {formErrors.محل_بازگشت && (
+                          <div className="text-danger">
+                            {formErrors.محل_بازگشت}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-8">
-                    <div className="form-group">
-                      <label>تاریخ تحویل</label>
+                    <div className="col-lg-8">
+                      <div className="form-group">
+                        <label>تاریخ تحویل</label>
 
-                      <DatePicker
-                        className="nice-select select open"
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        dateFormat="dd/MM/yyyy"
-                      />
+                        <DatePicker
+                          className="nice-select select open"
+                          selected={startDate}
+                          onChange={(date) => setStartDate(date)}
+                          dateFormat="dd/MM/yyyy"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-8">
-                    <div className="form-group">
-                      <label>تاریخ بازگشت</label>
+                    <div className="col-lg-8">
+                      <div className="form-group">
+                        <label>تاریخ بازگشت</label>
 
-                      <DatePicker
-                        className="nice-select select open"
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                        dateFormat="dd/MM/yyyy"
-                      />
+                        <DatePicker
+                          className="nice-select select open"
+                          selected={startDate}
+                          onChange={(date) => setStartDate(date)}
+                          dateFormat="dd/MM/yyyy"
+                        />
+                      </div>
                     </div>
-                  </div>
-                  <h6 className="fw-bold mt-4 mb-1"> اطلاعات تماس و آدرس</h6>
+                    <h6 className="fw-bold mt-4 mb-1"> اطلاعات تماس و آدرس</h6>
 
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>ایمیل</label>
-                      <input
-                        type="email"
-                        name="ایمیل"
-                        className="form-control"
-                        placeholder="ایمیل خود را وارد کنید"
-                        value={form.ایمیل}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.ایمیل && (
-                        <div className="text-danger">{formErrors.ایمیل}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>ایمیل</label>
+                        <input
+                          type="email"
+                          name="ایمیل"
+                          className="form-control"
+                          placeholder="ایمیل خود را وارد کنید"
+                          value={form.ایمیل}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.ایمیل && (
+                          <div className="text-danger">{formErrors.ایمیل}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>تلفن</label>
-                      <input
-                        name="تلفن"
-                        type="tel"
-                        className="form-control"
-                        placeholder="تلفن خود را وارد کنید"
-                        value={form.تلفن}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.تلفن && (
-                        <div className="text-danger">{formErrors.تلفن}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>تلفن</label>
+                        <input
+                          name="تلفن"
+                          type="tel"
+                          className="form-control"
+                          placeholder="تلفن خود را وارد کنید"
+                          value={form.تلفن}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.تلفن && (
+                          <div className="text-danger">{formErrors.تلفن}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>استان</label>
-                      <input
-                        name="استان"
-                        type="text"
-                        className="form-control"
-                        placeholder="استان خود را وارد کنید"
-                        value={form.استان}
-                        onChange={handleInputChange}
-                      />
-                      {formErrors.استان && (
-                        <div className="text-danger">{formErrors.استان}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>استان</label>
+                        <input
+                          name="استان"
+                          type="text"
+                          className="form-control"
+                          placeholder="استان خود را وارد کنید"
+                          value={form.استان}
+                          onChange={handleInputChange}
+                        />
+                        {formErrors.استان && (
+                          <div className="text-danger">{formErrors.استان}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>شهر</label>
-                      <input
-                        type="text"
-                        name="شهر"
-                        className="form-control"
-                        value={form.شهر}
-                        onChange={handleInputChange}
-                        placeholder="شهر خود را وارد کنید"
-                      />
-                      {formErrors.شهر && (
-                        <div className="text-danger">{formErrors.شهر}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>شهر</label>
+                        <input
+                          type="text"
+                          name="شهر"
+                          className="form-control"
+                          value={form.شهر}
+                          onChange={handleInputChange}
+                          placeholder="شهر خود را وارد کنید"
+                        />
+                        {formErrors.شهر && (
+                          <div className="text-danger">{formErrors.شهر}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="form-group">
-                      <label>کد پستی</label>
-                      <input
-                        name="کد_پستی"
-                        value={form.کد_پستی}
-                        onChange={handleInputChange}
-                        type="number"
-                        className="form-control"
-                        placeholder="کد پستی را وارد کنید"
-                      />
-                      {formErrors.کد_پستی && (
-                        <div className="text-danger">{formErrors.کد_پستی}</div>
-                      )}
+                    <div className="col-lg-6">
+                      <div className="form-group">
+                        <label>کد پستی</label>
+                        <input
+                          name="کد_پستی"
+                          value={form.کد_پستی}
+                          onChange={handleInputChange}
+                          type="number"
+                          className="form-control"
+                          placeholder="کد پستی را وارد کنید"
+                        />
+                        {formErrors.کد_پستی && (
+                          <div className="text-danger">
+                            {formErrors.کد_پستی}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-lg-12">
-                    <div className="form-group">
-                      <label>آدرس کامل</label>
-                      <textarea
-                        name="آدرس_کامل"
-                        value={form.آدرس_کامل}
-                        onChange={handleInputChange}
-                        className="form-control"
-                        placeholder="آدرس"
-                        cols={20}
-                        rows={5}
-                        defaultValue={""}
-                      />
-                      {formErrors.آدرس_کامل && (
-                        <div className="text-danger">
-                          {formErrors.آدرس_کامل}
-                        </div>
-                      )}
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <label>آدرس کامل</label>
+                        <textarea
+                          name="آدرس_کامل"
+                          value={form.آدرس_کامل}
+                          onChange={handleInputChange}
+                          className="form-control"
+                          placeholder="آدرس"
+                          cols={20}
+                          rows={5}
+                          defaultValue={""}
+                        />
+                        {formErrors.آدرس_کامل && (
+                          <div className="text-danger">
+                            {formErrors.آدرس_کامل}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="col-12 mt-4">
-                    <div className="form-check">
-                      <input
-                        name="agree"
-                        className="form-check-input"
-                        type="checkbox"
-                        id="agree"
-                        checked={form.agree}
-                        onChange={handleInputChange}
-                      />
-                      <label className="form-check-label" htmlFor="agree">
-                        من با شرایط خدمات و سیاست حفظ حریم خصوصی شما موافقم.
-                      </label>
-                      {formErrors.agree && (
-                        <div className="text-danger">{formErrors.agree}</div>
-                      )}
+                    <div className="col-12 mt-4">
+                      <div className="form-check">
+                        <input
+                          name="agree"
+                          className="form-check-input"
+                          type="checkbox"
+                          id="agree"
+                          checked={form.agree}
+                          onChange={handleInputChange}
+                        />
+                        <label className="form-check-label" htmlFor="agree">
+                          من با شرایط خدمات و سیاست حفظ حریم خصوصی شما موافقم.
+                        </label>
+                        {formErrors.agree && (
+                          <div className="text-danger">{formErrors.agree}</div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="col-lg-12 my-4">
+                      <button type="submit" className="theme-btn">
+                        <span className="far fa-save" /> رزرو خودرو
+                      </button>
                     </div>
                   </div>
-                  <div className="col-lg-12 my-4">
-                    <button type="submit" className="theme-btn">
-                      <span className="far fa-save" /> رزرو خودرو
-                    </button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
