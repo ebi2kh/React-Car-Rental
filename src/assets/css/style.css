@@ -48,6 +48,7 @@
   --body-font: "Roboto", iransans-light;
   --heading-font: "Inter", iransans-light;
   --theme-color: #ef1d26;
+  /* --theme-color: #9eef1d; */
   --theme-bg-light: #f9f9f9;
   --body-text-color: #757f95;
   --color-white: #ffffff;
@@ -515,7 +516,7 @@ label {
   text-align: center;
   overflow: hidden;
   border: none;
-  background: var(--theme-color);
+  background: #692d7c;
   box-shadow: var(--box-shadow);
   z-index: 1;
 }

@@ -241,7 +241,7 @@ export const CarSingle = () => {
             </div>
             <div className="col-lg-4">
               {/* <div className="car-single-related mt-5"> */}
-              <h3 className="mb-30">Related Listing</h3>
+              <h3 className="mb-30">خودرو های مرتبط</h3>
               <RelatedCar />
               {/* </div> */}
             </div>
