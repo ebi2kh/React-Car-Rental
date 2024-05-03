@@ -1,8 +1,27 @@
-# React + Vite
+# Car Rental Site with Filtering and Form Validation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a car rental website with features like car list filtering and form validation. It is built using ReactJS in Persian.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Car list with advanced filtering options
+- Form validation for user inputs
+
+## Technologies Used
+
+- ReactJS
+- React Router Dom for routing
+- Context API
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies using `npm install`
+3. Start the development server with `npm run dev`
+
+## Usage
+
+- Browse the car list and use filtering options to find desired cars
+- Fill out forms with validation to book a car rental
